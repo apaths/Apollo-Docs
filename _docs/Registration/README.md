@@ -25,4 +25,6 @@ a few minutes.
 ## Using the API
 
 When validated, you will be able to use the receive authoriztion tokens through
-the [Authentication API](./_docs/API/authentication/README.md).
+the [Users API](../API/users/README.md). See
+[Authentication](../authentication/README.md) for detailed instructions for
+authorizing your application.

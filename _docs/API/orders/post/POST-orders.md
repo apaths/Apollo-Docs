@@ -11,17 +11,16 @@
   - [Physician object](#physician-object)
   - [Specimen object](#specimen-object)
   - [Body example](#body-example)
-- [Responses](#resposnes)
-  - [Success](#success)
-    - [`201 CREATED`](#201-created)
-  - [Client Errors]
-    - [`400 BAD REQUEST`](#400-bad-request)
-    - [`401 UNAUTHORIZED`](#401-unauthorized)
-    - [`403 FORBIDDEN`](#403-forbidden)
-    - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
-  - [Server Errors]
-    - [`500 SERVER ERROR`](#500-server-error)
-    - [`503 SERVICE UNAVAILABLE`](`503-service-unavailable)
+- [Success Responses](#success)
+  - [`201 CREATED`](#201-created)
+- [Client Error Responses](#client-errors-responses)
+  - [`400 BAD REQUEST`](#400-bad-request)
+  - [`401 UNAUTHORIZED`](#401-unauthorized)
+  - [`403 FORBIDDEN`](#403-forbidden)
+  - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
+- [Server Error Responses]
+  - [`500 SERVER ERROR`](#500-server-error)
+  - [`503 SERVICE UNAVAILABLE`](`503-service-unavailable)
 
 
 ## Description
@@ -43,7 +42,6 @@ Header as a Bearer Token.
 Pass parameters to the resource using the request body. All fields below are
 optional unless marked with `REQUIRED`.
 
-|----------------------------|-------------|------------------------------------|
 | Parameter                  | Type        | Description                        |
 |----------------------------|-------------|------------------------------------|
 | clientApp                  | String      | **Required** Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
@@ -75,7 +73,6 @@ optional unless marked with `REQUIRED`.
 
 Supply the insurance object as a body parameter
 
-|-----------------------------|-------------|-----------------------------------|
 | Parameter                   | Type        | Description                       |
 |-----------------------------|-------------|-----------------------------------|
 | groupNumber                 | String      | Default: none<br>Insurance group number            |
@@ -90,7 +87,6 @@ Supply the insurance object as a body parameter
 
 Supply the patient object as a body parameter
 
-|-----------------------------|-------------|-----------------------------------|
 | Parameter                   | Type        | Description                       |
 |-----------------------------|-------------|-----------------------------------|
 | addressStreet1              | String      | Default: none<br>Street address (line 1) |
@@ -117,7 +113,6 @@ Supply the patient object as a body parameter
 Supply the phyisican object as the `primaryPhysician` or `secondaryPhysican`
 body parameters.
 
-|-----------------------------|-------------|-----------------------------------|
 | Parameter                   | Type        | Description                       |
 |-----------------------------|-------------|-----------------------------------|
 | firstName                   | String      | Default: none<br>Physician's first name |
@@ -130,7 +125,6 @@ body parameters.
 
 Supply the specimen object as the 'specimens' array in the request body.
 
-|------------------------------|-------------|----------------------------------|
 | Parameter                    | Type        | Description                      |
 |------------------------------|-------------|----------------------------------|
 | anatomicalDirection          | String      | Default: none<br>Direction (ex: "Proximal", "Distal") |
@@ -207,16 +201,16 @@ Supply the specimen object as the 'specimens' array in the request body.
 }
 ```
 
-## Responses
+## Success Responses
 
-### Success
+### `201 CREATED`
 
-#### '201 CREATED'
-
-**Condition** User is authenticated, authorized, and the `order` object was created
+**Condition** \
+User is authenticated, authorized, and the `order` object was created
 successfully.
 
-**Returns** The newly created object, with any fields added by the server.
+**Returns** \
+The newly created object, with any fields added by the server.
 
 **Example return**
 ``` Javascript
@@ -225,13 +219,15 @@ successfully.
 }
 ```
 
-### Client Errors
+## Client Errors
 
-#### 400 BAD REQUEST
+### `400 BAD REQUEST`
 
-**Condition** Invalid input was supplied.
+**Condition** \
+Invalid input was supplied.
 
-**Returns** Status code and list of invalid parameters and messages.
+**Returns** \
+Status code and list of invalid parameters and messages.
 
 **Example return**
 ``` Javascript
@@ -251,32 +247,37 @@ successfully.
 ]
 ```
 
-#### 401 UNAUTHORIZED
-**Condition** User does not have the proper role for the requesed operation.
+### `401 UNAUTHORIZED`
+**Condition** \
+User does not have the proper role for the requesed operation.
 
-**Returns** A string with following message.
+**Returns** \
+A string with following message.
 
 **Example return**
 ``` Javascript
 "You do not have the appropriate role"
 ```
 
-#### 403 FORBIDDEN
-**Condition** User has not signed into the appliation. The token is either
-invalid or missing.
+### `403 FORBIDDEN`
+**Condition** \
+User has not signed into the appliation. The token is either invalid
+or missing.
 
-**Returns** The following message as a string
+**Returns** \
+The following message as a string
 
 **Example return**
 ``` Javascript
 "You must sign in before you can do that."
 ```
 
-#### 429 TOO MANY REQUESTS
-**Condition** User has supplied too many operations in too short of a time
-interval.
+### `429 TOO MANY REQUESTS`
+**Condition** \
+User has supplied too many operations in too short of a time interval.
 
-**Returns** The following message as a string
+**Returns** \
+The following message as a string
 
 **Example return**
 ``` Javascript
@@ -284,24 +285,24 @@ interval.
 ```
 
 
-### Server Errors
+## Server Errors
 
 
-#### 500 SERVER ERROR
-**Condition** This is a generic, temporary error. The server is having a problem
+### `500 SERVER ERROR`
+**Condition** \
+This is a generic, temporary error. The server is having a problem
 but should return to service soon. If this error persists--contact support.
 
-**Returns** The following message as a string
+**Returns** \
+The following message as a string
 
 **Example return**
 ``` Javascript
 "Temporary server error. You may want to try again in a few minutes."
 ```
 
-#### 503 SERVICE UNAVAILABLE
-**Condition** This is an intentional server shut down due to maintenance
+### 503 SERVICE UNAVAILABLE
+**Condition** \
+This is an intentional server shut down due to maintenance
 (for example) but will return to service (it's not permanent). Unlike
 `500 SERVER ERROR` there is no need to contact support if the error is encountered.
-
-
-
