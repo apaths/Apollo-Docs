@@ -14,23 +14,23 @@ app users before becoming `cases` that are ready for import into the LIS.
 
 Before you can access the `orders` resource must first:
 
-- [Register as a user](../registration/readme.md)
-- [Receive an authorization token](../users/authenticate.md)
+- [Register as a user](../registration/README.md)
+- [Receive an authorization token](../authentication/README.md)
 - [Call the desired API endpoints](#api-reference)
 
 
 ## API Reference
 
-### Create an new order
-- [`*POST/* orders`](./post/orders.md)
+### Create a new order
+- [POST/ orders](./post/POST-orders.md)
 
-### Read an order
-- [`*GET/* orders](./get/orders.md)
-- [`*GET/* orders/{id}](./get/orders-id.md)
-- [`*GET/* order/{id}/{field}`](./get/orders-id-field.md)
+### Read orders
+- [GET/ orders](./get/GET-orders.md)
+- [GET/ orders/{id}](./get/GET-orders-id.md)
+- [GET/ orders/{id}/{field}](./get/GET-orders-id-field.md)
 
-### Modify an order
-- [`*PUT/* orders/{id}`](./put/orders-id.md)
+### Update an order
+- [PUT/ orders/{id}](./put/PUT-orders-id.md)
 
 ### Delete an order
-- [`*DELETE/* orders/{id}`](./delete/orders-id.md)
+- [DELETE/ orders/{id}](./delete/DELETE-orders-id.md)

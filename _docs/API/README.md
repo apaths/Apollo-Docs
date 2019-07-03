@@ -13,25 +13,25 @@
 
 The Apollo API exposes four services to other applications.
 
-## [Cases](./cases/README.md)
+## Cases
 
 [Cases](./cases/README.md) provides access to the validated cases ready for
 import into downstream applications such as an LIS or other system.
 
-## [Orders](./orders/README.md)
+## Orders
 
-Use the [Orders](./orders/README.md) to put new laboratory orders on to the
-application.
+[Orders](./orders/README.md) service puts and manages new laboratory orders
+on the application.
 
-## [Pending](./pending/README.md)
+## Pending
 
-[Pending](./pending/README.md) provides support to the front-end client application
-where accessioners will validate the `orders` data to ensure it's appropriate for
-import into a downstream application.
+[Pending](./pending/README.md) service provides support to the front-end client
+application where accessioners validate the `orders` data to ensure it's
+appropriate for import into a downstream application.
 
-## [Users](./users/README.md)
+## Users
 
-The [Users](./users/README.md) service allows users toregister with the app,
+[Users](./users/README.md) service allows users to register with the app,
 retreive access tokens, sign on and sign off.
 
 ## API Reference
