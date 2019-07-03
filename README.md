@@ -13,7 +13,6 @@ HMRs, or any other client software.
 It exposes a [REST API](./_docs/API/README.md) to external applications.
 The API consists of four main resources.
 
-|---------------|--------------------------------------------------------------|
 | Resource      | Description                                                  |
 |---------------|--------------------------------------------------------------|
 | Cases         | Supports outbound requests for cases ready to import to LIS  |
@@ -24,13 +23,13 @@ The API consists of four main resources.
 
 ## Documentation
 
-- [Registration](./_docs/registration/README.md)
-- [Authorization](./_docs/authorization/README.md)
+- [Registration](./_docs/soon.md)
+- [Authorization](./_docs/soon.md)
 - [API Reference](./_docs/API/README.md)
-  -[Orders](./_docs/API/orders/README.md)
-  -[Pending](./_docs/API/pending/README.md)
-  -[Cases](./_docs/API/cases/README.md)
-  -[Users](./_docs/API/users/README.md)
+  - [Orders](./_docs/API/orders/README.md)
+  - [Pending](./_docs/soon.md)
+  - [Cases](./_docs/soon.md)
+  - [Users](./_docs/soon.md)
 
 
 
