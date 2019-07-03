@@ -27,7 +27,7 @@
 ## Description
 
 Create a new `order` object by using the `POST/` verb. You need to supply an
-[authorization](#authorization) token and provide a valid request
+[authentication](#authentication) token and provide a valid request
 [body](#body-parameters). The server will [respond](#success-responses) according to
 the results of the request.
 
