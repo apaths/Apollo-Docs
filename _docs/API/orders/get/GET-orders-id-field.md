@@ -6,7 +6,7 @@
 - [Description](#description)
 - [Authentication](#authentication)
 - [Request construction](#request-construction)
-  - [Query fields](#query-fields)
+  - [Path parameters](#query-fields)
   - [Example request](#example-request)
 - [Success Responses](#success)
   - [`200 OK`](#200-ok)
@@ -35,7 +35,7 @@ See [Authentication](../../../authentication/README.md). Use the
 [`users/token`](../../users/get/token.md) endpoint to receive your token. Supply
 the token in the Authorization Header as a Bearer Token.
 
-## Requst construction
+## Request construction
 
 ### Path parameter
 
@@ -45,11 +45,6 @@ Pass the `orderID` of the desired `order` using the route path.
 |------------------|------------| :-----: | ------------------------------------|
 | id               | String     | Yes     | Default: none<br>`OrderID` for the desired `order` |
 | field            | String     | Yes     | Default: none<br>One of the [Order fields](../README.md#fields)
-
-### Query fields
-
-Pass parameters to the resource using the request body. All fields are
-optional unless marked with `REQUIRED`.
 
 
 ### Example request

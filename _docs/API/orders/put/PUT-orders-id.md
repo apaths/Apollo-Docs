@@ -1,4 +1,4 @@
-# PATCH/ orders/{id}
+# PUT/ orders/{id}
 
 
 ## Overview
@@ -19,7 +19,6 @@
   - [`400 BAD REQUEST`](#400-bad-request)
   - [`401 UNAUTHORIZED`](#401-unauthorized)
   - [`403 FORBIDDEN`](#403-forbidden)
-  - [`404 NOT FOUND`](#404-not-found)
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
 - [Server Error Responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
@@ -164,17 +163,6 @@ The following message as a string
 ``` Javascript
 "You must sign in before you can do that."
 ```
-
-#### `404 NOT FOUND`
-**Condition** \
-The `order` cannot be located by the supplied `id` term.
-
-**Returns** \
-The following message as a string
-
-**Example return**
-```Javascript
-"Order not found"
 
 #### `429 TOO MANY REQUESTS`
 **Condition** \

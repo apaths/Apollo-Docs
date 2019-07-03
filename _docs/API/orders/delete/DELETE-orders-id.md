@@ -13,7 +13,7 @@
 - [Client Error Responses](#client-errors-responses)
   - [`400 BAD REQUEST`](#400-bad-request)
   - [`401 UNAUTHORIZED`](#401-unauthorized)
-  - [`403 FORBIDDEN`](#403-forbidden)
+  - [`403 FORBIDDEN`](#403-forbidden))
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
 - [Server Error Responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
