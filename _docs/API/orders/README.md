@@ -8,15 +8,17 @@
 
 ## Introduction
 
-HMRs and other clients create `orders`. `Orders` are considered "dirty" source
-data. The incoming `Order` objects will be conditioned and validated by
-app users before becoming `cases` that are ready for import into the LIS.
+HMRs and other clients create `orders` on the server using this API.
+`Orders` are considered "dirty" source data. The incoming `Order` objects
+will be conditioned as best as possible by the application then presented to
+users to validate. After `pending` orders are validated, they become `cases`
+that are ready for import into the LIS or any other appliation.
 
-Before you can access the `orders` resource must first:
+To access the `orders` resource:
 
-- [Register as a user](../registration/README.md)
-- [Receive an authorization token](../authentication/README.md)
-- [Call the desired API endpoints](#api-reference)
+- Register as user. See [Registration](../registration/README.md)
+- Hold and send an [Authentication token](../authentication/README.md)
+- Call [API endpoint](#api-reference) you desire
 
 
 ## API Reference

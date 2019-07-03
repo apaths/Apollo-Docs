@@ -19,7 +19,6 @@ The API consists of four main resources.
 | Orders        | Provides interface for creating, reading, updating orders    |
 | Pending       | Supports a client application for users to review and verify orders  |
 | Users         | Supports user autorizatin and management                     |
-|---------------|--------------------------------------------------------------|
 
 ## Documentation
 
