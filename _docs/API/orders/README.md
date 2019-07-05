@@ -41,18 +41,18 @@ parameter.
 | diagnosisPostOp            | String      | Physician supplied diagnosis information created after the procedure.|
 | diagnosisPreOp             | String      | Physician supplied diagnosis information created prior to the procedure being performed   |
 | instructions               | String      | Physician instructions sent to the lab |
-| insurancePrimary           | Object      | An [insurance object](./post/POST-ordres.md#insurance-object) for the primary insurance payer  |
-| insuranceSecondary         | Object      | An [insurance object](./post/POST-ordres.md##insurance-object) for the secondary insurance payer  |
-| insuranceTertiary          | Object      | An [insurance object](./post/POST-ordres.md##insurance-object) for the primary insurance payer  |
+| insurancePrimary           | Object      | An [insurance object](./post/POST-orders.md#insurance-object) for the primary insurance payer  |
+| insuranceSecondary         | Object      | An [insurance object](./post/POST-orders.md##insurance-object) for the secondary insurance payer  |
+| insuranceTertiary          | Object      | An [insurance object](./post/POST-orderes.md##insurance-object) for the primary insurance payer  |
 | locationName               | String      | Name of the facility where the procedure was performed  |
 | locationNPI                | String      | 10-digit NPI number of the facility where the procedure was performed |
 | orderID                    | String      | Unique ID for the order |
-| patient                    | Object      | [patient object](#patient-object) describing the patient |
-| physicianPrimary           | Object      | A [physician object](./post/POST-ordres.md#physician-object) for the primary (ordering) physician  |
-| physicianSecondary         | Object      | A [physician object](./post/POST-ordres.md#physician-object) for the secondary (referring) physician  |
+| patient                    | Object      | [patient object](./post/POST-orders.md#patient-object) describing the patient |
+| physicianPrimary           | Object      | A [physician object](./post/POST-orders.md#physician-object) for the primary (ordering) physician  |
+| physicianSecondary         | Object      | A [physician object](./post/POST-orders.md#physician-object) for the secondary (referring) physician  |
 | procedureDate              | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | procedureType              | String      | Type of procedure. Typcally ("EGD", "Colon", "Double"). |
-| specimens                  | Array       | An array of [specimen objects](./post/POST-ordres.md#specimen-object) submitted for pathology  |
+| specimens                  | Array       | An array of [specimen objects](./post/POST-orders.md#specimen-object) submitted for pathology  |
 | status                     | String      | Indicates status. One of `pending`, `converted`, `deleted`  |
 | updatedAt                  | String      | Date the order was last updated on the service |
 

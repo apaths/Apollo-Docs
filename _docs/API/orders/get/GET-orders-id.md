@@ -34,7 +34,7 @@ See [Authentication](../../../authentication/README.md). Use the
 [`users/token`](../../users/get/token.md) endpoint to receive your token. Supply
 the token in the Authorization Header as a Bearer Token.
 
-## Requst construction
+## Request construction
 
 ### Path parameter
 

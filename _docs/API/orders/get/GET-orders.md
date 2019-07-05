@@ -33,7 +33,7 @@ You must be an authenticated user to retreive `orders`. See [Authentication](../
 Use the [`users/token`](../../users/get/token.md) endpoint to receive your token.
 Supply the token in the Authorization Header as a Bearer Token.
 
-## Requst construction
+## Request construction
 
 ### Query fields
 
@@ -49,11 +49,11 @@ optional unless marked with `REQUIRED`.
 | locationName               | String      |          | Default: none<br>Name of the facility where the procedure was performed  |
 | locationNPI                | String      |          | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
 | limit                      | number      |          | Default: 100<br>A number between 0-1000. Limit results to this many `orders`  |
-| patient                    | Object      |          | Nested [Patient Object]('../..patients.README.md'<br>See [Read more] about querying nested object. |
-| physicianPrimary           | Object      |          | Nested [Physician Object]('../..physicians.README.md'<br>See [Read more] about querying nested object. |
+| patient                    | Object      |          | Nested [Patient Object](../README.md#fields'<br>See [Read more] about querying nested object. |
+| physicianPrimary           | Object      |          | Nested [Physician Object](../README.md#fields<br>See [Read more] about querying nested object. |
 | procedureDate              | String      |          | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | skip                       | number      |          | Default: 0<br>A positive integer. Skips the result to the n-th supplied number |
-| status                     | String      |          | Default: "All"<br>A comma separated list of [Order Status](#../README.md#fields)
+| status                     | String      |          | Default: "All"<br>A comma separated list of [Order Status](../README.md#fields)
 | importedFrom               | String      |          | Default: none<br>An ISO8601 date/time stamp. Orders with `importDate` greater than or equal to this value.
 | importedThru               | String      |          | Default: none<br>An ISO8601 date/time stamp. Returns orders with `importDate` less than, or equal to this value.
 
