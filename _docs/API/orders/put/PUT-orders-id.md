@@ -22,7 +22,7 @@
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
 - [Server Error Responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
-  - [`503 SERVICE UNAVAILABLE`](`503-service-unavailable)
+  - [`503 SERVICE UNAVAILABLE`](#503-service-unavailable)
 
 
 ## Description
@@ -58,7 +58,7 @@ if all values are valid. These are the updatable fields
 | Parameter                  | Type        | Description                        |
 |----------------------------|-------------|------------------------------------|
 | clientApp                  | String      | Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
-| clientRecordNumberID       | String      | An ID the client uses to track the order. |
+| clientRecordID             | String      | An ID the submitting (HMR, typically) client uses to track the order. |
 | clientMedicalRecordNumber  | String      | An ID the client HMR provides for the patienst medical record number |
 | clientName                 | String      | Default: none<br>Name of the ordering client |
 | clientNPI                  | String      | Default: none<br>10-digit NPI number of the ordering customer  |

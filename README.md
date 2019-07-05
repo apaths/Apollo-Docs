@@ -22,7 +22,7 @@ The API consists of four main resources.
 
 ## Documentation
 
-- [Registration](./_docs/soon.md)
+- [Registration](./_docs/registration/README.md)
 - [Authorization](./_docs/soon.md)
 - [API Reference](./_docs/API/README.md)
   - [Orders](./_docs/API/orders/README.md)

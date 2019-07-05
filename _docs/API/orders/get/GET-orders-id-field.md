@@ -17,7 +17,7 @@
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
 - [Server Error Responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
-  - [`503 SERVICE UNAVAILABLE`](`503-service-unavailable)
+  - [`503 SERVICE UNAVAILABLE`](#503-service-unavailable)
 
 
 ## Description
@@ -49,7 +49,7 @@ Pass the `orderID` of the desired `order` using the route path.
 
 ### Example request
 
-```https://   /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/clientApp```
+```/orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/clientApp```
 
 
 ## Success Responses
@@ -61,7 +61,7 @@ User is authenticated, authorized, and the `order` object was retreived
 successfully.
 
 **Example Request** \
-```https://   /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/clientName```
+```GET/ orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/clientName```
 
 **Returns** \
 The object matching the query parameters.
@@ -85,7 +85,7 @@ Invalid input was supplied.
 Status code and list of invalid parameters and messages.
 
 **Example request**
-```https://   /api/1/get/orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z?skip=-1&clientNPI=5```
+```GET /api/1/get/orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z?skip=-1&clientNPI=5```
 
 **Example return**
 ``` Javascript

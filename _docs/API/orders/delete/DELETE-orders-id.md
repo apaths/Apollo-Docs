@@ -17,7 +17,7 @@
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
 - [Server Error Responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
-  - [`503 SERVICE UNAVAILABLE`](`503-service-unavailable)
+  - [`503 SERVICE UNAVAILABLE`](#503-service-unavailable)
 
 
 ## Description
@@ -47,7 +47,7 @@ Pass the `orderID` of the desired `order` using the route path.
 
 ### Example request
 
-```DELETE/ https://   /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/?fields=clientApp,clientName,clientReqId```
+```DELETE/ orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/?fields=clientApp,clientName,clientReqId```
 
 
 ## Success Responses
@@ -59,7 +59,7 @@ User is authenticated, authorized, and the `order` object was deleted
 successfully.
 
 **Example Request** \
-```https://   /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z```
+```DELETE/ orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z```
 
 **Returns** \
 The objects matching the query parameters. Only fields selected with the `fields`
@@ -85,7 +85,7 @@ Invalid input was supplied.
 Status code and list of invalid parameters and messages.
 
 **Example request**
-```https://   /api/1/get/orders/
+```DELETE orders/```
 
 **Example return**
 ``` Javascript

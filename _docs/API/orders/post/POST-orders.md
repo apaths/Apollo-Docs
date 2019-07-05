@@ -21,7 +21,7 @@
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
 - [Server Error Responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
-  - [`503 SERVICE UNAVAILABLE`](`503-service-unavailable)
+  - [`503 SERVICE UNAVAILABLE`](#503-service-unavailable)
 
 
 ## Description
@@ -47,7 +47,7 @@ optional unless marked with `REQUIRED`.
 | Parameter                  | Type        | Required | Description                        |
 |----------------------------|-------------| :------: |------------------------------------|
 | clientApp                  | String      | Yes      | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
-| clientRecordNumberID       | String      |          | Default: none<br>An ID the client uses to track the order. |
+| clientRecordID             | String      |          | Default: none<br>An ID the client HMR uses to track the order. |
 | clientMedicalRecordNumber  | String      |          | Default: none<br>An ID the client HMR provides for the patienst medical record number |
 | clientName                 | String      | Yes      | Default: none<br>Name of the ordering client |
 | clientNPI                  | String      | Yes      | Default: none<br>10-digit NPI number of the ordering customer  |
@@ -68,7 +68,6 @@ optional unless marked with `REQUIRED`.
 | procedureDate              | String      | Yes      | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | procedureType              | String      |          | Default: none<br>Type of procedure. Typcally ("EGD", "Colon", "Double").
 | specimens                  | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
-
 
 ### Insurance object
 
@@ -143,7 +142,7 @@ Supply the specimen object as the 'specimens' array in the request body.
 ``` Javascript
 {
   clientApp: "eCW",
-  clientRecordNumberID: "12345",
+  clientRecordID: "12345",
   clientMedicalRecordNumber "MRN32334",
   clientName: "Atlanta Medical Group",
   clientNPI: "1248842544",

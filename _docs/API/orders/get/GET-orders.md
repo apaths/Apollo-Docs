@@ -17,7 +17,7 @@
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
 - [Server Error Responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
-  - [`503 SERVICE UNAVAILABLE`](`503-service-unavailable)
+  - [`503 SERVICE UNAVAILABLE`](#503-service-unavailable)
 
 
 ## Description
@@ -59,7 +59,7 @@ optional unless marked with `REQUIRED`.
 
 ### Example request
 
-```https://   /orders?clientApp=eCW&clientNPI=43928872844&fields=clientApp,clientName,clientReqId```
+```GET /orders?clientApp=eCW&clientNPI=43928872844&fields=clientApp,clientName,clientReqId```
 
 
 ## Success Responses
@@ -102,7 +102,7 @@ Invalid input was supplied.
 Status code and list of invalid parameters and messages.
 
 **Example request**
-```https://   /api/1/get/orders?skip=-1&clientNPI=5```
+```GET /api/1/get/orders?skip=-1&clientNPI=5```
 
 **Example return**
 ``` Javascript

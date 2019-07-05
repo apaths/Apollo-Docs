@@ -17,7 +17,7 @@
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
 - [Server Error Responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
-  - [`503 SERVICE UNAVAILABLE`](`503-service-unavailable)
+  - [`503 SERVICE UNAVAILABLE`](#503-service-unavailable)
 
 
 ## Description
@@ -55,7 +55,7 @@ optional unless marked with `REQUIRED`.
 
 ### Example request
 
-```https://   /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/?fields=clientApp,clientName,clientReqId```
+```GET /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/?fields=clientApp,clientName,clientReqId```
 
 
 ## Success Responses
@@ -67,7 +67,7 @@ User is authenticated, authorized, and the `order` object was retreived
 successfully.
 
 **Example Request** \
-```https://   /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z?fields=clientApp,clientName,clientReqId```
+```GET /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z?fields=clientApp,clientName,clientReqId```
 
 **Returns** \
 The objects matching the query parameters. Only fields selected with the `fields`
