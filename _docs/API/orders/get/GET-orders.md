@@ -42,24 +42,22 @@ optional unless marked with `REQUIRED`.
 
 | Parameter                  | Type        | Required | Description                        |
 |----------------------------|-------------| :------: |------------------------------------|
-| clientApp                  | String      |          | Default: none<br>A comma separated list of EMR names<br>ex: "gMed", "Practice Fusion"  |
-| clientName                 | String      |          | Default: none<br>A comma separted list of client names. |
-| clientNPI                  | String      |          | Default: none<br>10-digit NPI number of the ordering customer  |
-| fields                     | String      |          | Default: none<br>- 'all' to return all available fields<br>- A comma separated list of [Order fields](../README.md#fields)
-| locationName               | String      |          | Default: none<br>Name of the facility where the procedure was performed  |
-| locationNPI                | String      |          | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
+| client_app                 | String      |          | Default: none<br>A comma separated list of EMR names<br>ex: "gMed", "Practice Fusion"  |
+| client_name                | String      |          | Default: none<br>A comma separted list of client names. |
+| client_npi                 | String      |          | Default: none<br>10-digit NPI number of the ordering customer  |
+| fields                     | String      |          | Default: 'all'<br>- 'all' to return all available fields<br>- A comma separated list of [Order fields](../README.md#fields)
+| location_name              | String      |          | Default: none<br>A comman separated list of facility names where the procedure was performed  |
+| location_npi               | String      |          | Default: none<br>A comma separated list of 10-digit NPI number of the facility where the procedure was performed |
 | limit                      | number      |          | Default: 100<br>A number between 0-1000. Limit results to this many `orders`  |
-| patient                    | Object      |          | Nested [Patient Object](../README.md#fields'<br>See [Read more] about querying nested object. |
-| physicianPrimary           | Object      |          | Nested [Physician Object](../README.md#fields<br>See [Read more] about querying nested object. |
-| procedureDate              | String      |          | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
+| procedure_date             | String      |          | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | skip                       | number      |          | Default: 0<br>A positive integer. Skips the result to the n-th supplied number |
 | status                     | String      |          | Default: "All"<br>A comma separated list of [Order Status](../README.md#fields)
-| importedFrom               | String      |          | Default: none<br>An ISO8601 date/time stamp. Orders with `importDate` greater than or equal to this value.
-| importedThru               | String      |          | Default: none<br>An ISO8601 date/time stamp. Returns orders with `importDate` less than, or equal to this value.
+| imported_from              | String      |          | Default: none<br>An ISO8601 date/time stamp. Orders with `importDate` greater than or equal to this value.
+| imported_thru              | String      |          | Default: none<br>An ISO8601 date/time stamp. Returns orders with `importDate` less than, or equal to this value.
 
 ### Example request
 
-```GET /orders?clientApp=eCW&clientNPI=43928872844&fields=clientApp,clientName,clientReqId```
+```GET /orders?clientApp=eCW&client_npi=43928872844&fields=client_app,client_name,client_record_id```
 
 
 ## Success Responses
@@ -78,13 +76,13 @@ parameter are returned.
 ``` Javascript
 [
   {
-    clientApp: "eCW",
-    clientName: "Atlanta Medical Center",
-    clientReqID: "43534534",
+    client_app: "eCW",
+    client_name: "Atlanta Medical Center",
+    client_record_id: "43534534",
   }, {
-    clientApp: "eCW",
-    clientName: "Atlanta Medical Center",
-    clientReqID: "908078098",
+    client_app: "eCW",
+    client_name: "Atlanta Medical Center",
+    client_record_id: "908078098",
   }
   // ...
 ]
@@ -102,14 +100,14 @@ Invalid input was supplied.
 Status code and list of invalid parameters and messages.
 
 **Example request**
-```GET /api/1/get/orders?skip=-1&clientNPI=5```
+```GET /api/1/get/orders?skip=-1&client_npi=5```
 
 **Example return**
 ``` Javascript
 [
   {
     location: "query",
-    param: "clientNPI",
+    param: "client_npi",
     value: 5,
     msg: "Must be a string of 10 numeric characters"
   },

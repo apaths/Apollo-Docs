@@ -57,27 +57,27 @@ if all values are valid. These are the updatable fields
 
 | Parameter                  | Type        | Description                        |
 |----------------------------|-------------|------------------------------------|
-| clientApp                  | String      | Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
-| clientRecordID             | String      | An ID the submitting (HMR, typically) client uses to track the order. |
-| clientMedicalRecordNumber  | String      | An ID the client HMR provides for the patienst medical record number |
-| clientName                 | String      | Default: none<br>Name of the ordering client |
-| clientNPI                  | String      | Default: none<br>10-digit NPI number of the ordering customer  |
+| client_app                 | String      | Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
+| client_req_id              | String      | An ID the submitting (HMR, typically) client uses to track the order. |
+| client_mrn                 | String      | An ID the client HMR provides for the patienst medical record number |
+| client_name                | String      | Default: none<br>Name of the ordering client |
+| client_npi                 | String      | Default: none<br>10-digit NPI number of the ordering customer  |
 | data                       | Object      | A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
-| diagnosisComments          | String      | Any additional comments |
-| diagnosisHistory           | String      | Physician supplied diagnosis history. Used to provide background to reading pathologist. |
-| diagnosisPostOp            | String      | Physician supplied diagnosis information created after the procedure.|
-| diagnosisPreOp             | String      | Physician supplied diagnosis information created prior to the procedure being performed   |
+| diagnosis_comments         | String      | Any additional comments |
+| diagnosis_history          | String      | Physician supplied diagnosis history. Used to provide background to reading pathologist. |
+| diagnosis_post_op          | String      | Physician supplied diagnosis information created after the procedure.|
+| diagnosis_pre_op           | String      | Physician supplied diagnosis information created prior to the procedure being performed   |
 | instructions               | String      | Physician instructions sent to the lab |
-| insurancePrimary           | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
-| insuranceSecondary         | Object      | An [insurance object](#insurance-object) for the secondary insurance payer  |
-| insuranceTertiary          | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
-| locationName               | String      | Name of the facility where the procedure was performed  |
-| locationNPI                | String      | 10-digit NPI number of the facility where the procedure was performed |
+| insurance_primary          | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
+| insurance_secondary        | Object      | An [insurance object](#insurance-object) for the secondary insurance payer  |
+| insurance_tertiary         | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
+| location_name              | String      | Name of the facility where the procedure was performed  |
+| location_npi               | String      | 10-digit NPI number of the facility where the procedure was performed |
 | patient                    | Object      | A [patient object](#patient-object) describing the patient |
-| physicianPrimary           | Object      | A [physician object](#physician-object) for the primary (ordering) physician  |
-| physicianSecondary         | Object      | A [physician object](#physician-object) for the secondary (referring) physician  |
-| procedureDate              | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
-| procedureType              | String      | Type of procedure. Typcally ("EGD", "Colon", "Double").
+| physician_primary          | Object      | A [physician object](#physician-object) for the primary (ordering) physician  |
+| physician_secondary        | Object      | A [physician object](#physician-object) for the secondary (referring) physician  |
+| procedure_date             | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
+| procedure_type             | String      | Type of procedure. Typcally ("EGD", "Colon", "Double").
 | specimens                  | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
 
 > NOTE: that for nested object (type is Array or Object) the entire object is replaced.
@@ -86,10 +86,10 @@ if all values are valid. These are the updatable fields
 
 ``` Javascript
 {
-  clientApp: "eCW",
-  clientRecordNumberID: "12345",
-  clientMedicalRecordNumber "MRN32334",
-  clientName: "Atlanta Medical Group, LLC",
+  client_app: "eCW",
+  client_req_id: "12345",
+  client_mrn "MRN32334",
+  client_name: "Atlanta Medical Group, LLC",
 }
 ```
 
@@ -126,15 +126,15 @@ Status code and list of invalid parameters and messages.
 [
   {
     location: "body",
-    param: "clientName",
+    param: "client_name",
     value: null,
-    msg: "clientName is required"
+    msg: "client_name is required"
   },
   {
     location: "body",
-    param: "locationNPI",
+    param: "location_npi",
     value: "xyz",
-    msg: "location must ba 10-character string with only numbers and spaces"
+    msg: "location_npi must be a 10-character string with only numbers and spaces"
   }
 ]
 ```

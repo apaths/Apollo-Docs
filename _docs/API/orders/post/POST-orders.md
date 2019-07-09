@@ -44,42 +44,45 @@ Supply the token in the Authorization Header as a Bearer Token.
 Pass parameters to the resource using the request body. All fields are
 optional unless marked with `REQUIRED`.
 
-| Parameter                  | Type        | Required | Description                        |
-|----------------------------|-------------| :------: |------------------------------------|
-| clientApp                  | String      | Yes      | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
-| clientRecordID             | String      |          | Default: none<br>An ID the client HMR uses to track the order. |
-| clientMedicalRecordNumber  | String      |          | Default: none<br>An ID the client HMR provides for the patienst medical record number |
-| clientName                 | String      | Yes      | Default: none<br>Name of the ordering client |
-| clientNPI                  | String      | Yes      | Default: none<br>10-digit NPI number of the ordering customer  |
-| data                       | Object      |          | Default: none<br>A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
-| diagnosisComments          | String      |          | Default: none<br>Any additional comments |
-| diagnosisHistory           | String      |          | Default: none<br>Physician supplied diagnosis history. Used to provide background to reading pathologist. |
-| diagnosisPostOp            | String      |          | Default: none<br>Physician supplied diagnosis information created after the procedure.|
-| diagnosisPreOp             | String      |          | Default: none<br>Physician supplied diagnosis information created prior to the procedure being performed   |
-| instructions               | String      |          | Default: none<br>Physician instructions sent to the lab |
-| insurancePrimary           | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
-| insuranceSecondary         | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the secondary insurance payer  |
-| insuranceTertiary          | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
-| locationName               | String      | Yes      | Default: none<br>Name of the facility where the procedure was performed  |
-| locationNPI                | String      | Yes      | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
-| patient                    | Object      | Yes      | Default: none<br>A [patient object](#patient-object) describing the patient |
-| physicianPrimary           | Object      | Yes      | Default: none<br>A [physician object](#physician-object) for the primary (ordering) physician  |
-| physicianSecondary         | Object      |          | Default: none<br>A [physician object](#physician-object) for the secondary (referring) physician  |
-| procedureDate              | String      | Yes      | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
-| procedureType              | String      |          | Default: none<br>Type of procedure. Typcally ("EGD", "Colon", "Double").
-| specimens                  | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
+| Parameter                    | Type        | Required | Description                        |
+|------------------------------|-------------| :------: |------------------------------------|
+| client_app                   | String      | Yes      | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
+| client_req_id                | String      |          | Default: none<br>An ID the client HMR uses to track the order. |
+| client_mrn                   | String      |          | Default: none<br>An ID the client HMR provides for the patien's Medical Record Number (mrn) |
+| client_name                  | String      | Yes      | Default: none<br>Name of the ordering client |
+| client_npi                   | String      | Yes      | Default: none<br>10-digit NPI number of the ordering customer  |
+| data                         | Object      |          | Default: none<br>A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
+| diagnosis_comments           | String      |          | Default: none<br>Any additional comments |
+| diagnosis_history            | String      |          | Default: none<br>Physician supplied diagnosis history. Used to provide background to reading pathologist. |
+| diagnosis_post_op            | String      |          | Default: none<br>Physician supplied diagnosis information created after the procedure.|
+| diagnosis_pre_op             | String      |          | Default: none<br>Physician supplied diagnosis information created prior to the procedure being performed   |
+| instructions                 | String      |          | Default: none<br>Physician instructions sent to the lab |
+| insurance_primary            | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
+| insurance_secondary          | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the secondary insurance payer  |
+| insurance_tertiary           | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
+| location_name                | String      | Yes      | Default: none<br>Name of the facility where the procedure was performed  |
+| location_npi                 | String      | Yes      | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
+| patient                      | Object      | Yes      | Default: none<br>A [patient object](#patient-object) describing the patient |
+| physician_primary            | Object      | Yes      | Default: none<br>A [physician object](#physician-object) for the primary (ordering) physician  |
+| physician_secondary          | Object      |          | Default: none<br>A [physician object](#physician-object) for the secondary (referring) physician  |
+| procedure_date               | String      | Yes      | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
+| procedure_type               | String      |          | Default: none<br>Type of procedure. Typcally ("EGD", "Colon", "Double").
+| specimens                    | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
 
 ### Insurance object
 
-Supply the insurance object as a body parameter
+Supply the insurance object as an `insurance_primary`, `insurance_secondary`, or
+`insurance_tertiary` body parameter.
 
 | Parameter                   | Type        | Required | Description            |
 |-----------------------------|-------------| :------: |------------------------|
-| groupNumber                 | String      | Yes      | Default: none<br>Insurance group number  |
-| insuredAddress              | String      |          | Default: none<br>Insured person's address  |
-| insuredContact              | String      | Yes      | Default: none<br>Insuran  |
-| insuredMemberNumber         | String      | Yes      | Default: none<br>Member's insurance number  |
-| insuredRelationship         | String      |          | Default: none<br>Rleationship between the patient and insured policy holder (ex: "Parent", "Spouse")  |
+| group_number                | String      | Yes      | Default: none<br>Insurance group number  |
+| insured_address             | String      |          | Default: none<br>Insured person's address  |
+| insured_contact             | String      | Yes      | Default: none<br>Insuran  |
+| insured_member_number       | String      | Yes      | Default: none<br>Member's insurance number  |
+| insured_member_name         | String      | Yes      | Default: none<br>Name of the insured member (if different than PT)  |
+| insured_relationship        | String      |          | Default: none<br>Rleationship between the patient and insured policy holder (ex: "Parent", "Spouse")  |
+| member_number               | String      |          | Default: none<br>Patient's member number.  |
 | name                        | String      | Yes      | Default: none<br>Name of the insurance payer  |
 
 
@@ -89,19 +92,19 @@ Supply the patient object as a body parameter
 
 | Parameter                   | Type        | Required | Description            |
 |-----------------------------|-------------| :------: |------------------------|
-| addressStreet1              | String      |          | Default: none<br>Street address (line 1) |
-| addressStreet2              | String      |          | Default: none<br>Street address (line 2) |
+| address_street_1            | String      |          | Default: none<br>Street address (line 1) |
+| address_street_2            | String      |          | Default: none<br>Street address (line 2) |
 | city                        | String      |          | Default: none<br>City             |
-| countryCode                 | String      |          | Default: "US"<br>Any other of the ISO 2-digit country codes |
-| dateOfBirth                 | String      | Yes      | Default: none<br>Date of birth in "YYYY-MM-DD" format |
+| country_code                | String      |          | Default: "US"<br>Any other of the ISO 2-digit country codes |
+| date_of_birth               | String      | Yes      | Default: none<br>Date of birth in "YYYY-MM-DD" format |
 | email                       | String      |          | Default: none<br>Formatted email  |
-| firstName                   | String      | Yes      | Default: none<br>First name of the patient  |
-| lastName                    | String      | Yes      | Default: none<br>Last name of the patient  |
-| middleName                  | String      |          | Deafult: none<br>Middle name of the patient  |
-| phoneNumber                 | String      |          | Default: none<br>Unformatted 10-digit phone number (ex 5043440342) |
+| first_name                  | String      | Yes      | Default: none<br>First name of the patient  |
+| last_name                   | String      | Yes      | Default: none<br>Last name of the patient  |
+| middle_name                 | String      |          | Deafult: none<br>Middle name of the patient  |
+| phone_number                | String      |          | Default: none<br>Unformatted 10-digit phone number (ex 5043440342) |
 | prefix                      | String      |          | Default: none<br>Name prefix (ex: "Mr.", "Ms.")  |
 | sex                         | String      | Yes      | Default: none<br>One of "M" or "F" |
-| socialSecurityNumber        | String      |          | Default: none<br>Unformatted 9-digit number |
+| ssn                         | String      |          | Default: none<br>Unformatted 9-digit Social Security number |
 | state                       | String      |          | Default: none<br>State of patient |
 | suffix                      | String      |          | Default: none<br>Name suffix (ex: "Jr.", "III") |
 | zip                         | String      |          | Default: none<br>ZIP code of patient |
@@ -110,13 +113,13 @@ Supply the patient object as a body parameter
 
 ### Physisican object
 
-Supply the phyisican object as the `primaryPhysician` or `secondaryPhysican`
+Supply the phyisican object as the `primary_physician` or `secondary_physican`
 body parameters.
 
 | Parameter                   | Type        | Required | Description            |
 |-----------------------------|-------------| :------: |------------------------|
-| firstName                   | String      | Yes      | Default: none<br>Physician's first name |
-| lastName                    | String      | Yes      | Default; None<br>Physician's last name |
+| first_name                  | String      | Yes      | Default: none<br>Physician's first name |
+| last_name                   | String      | Yes      | Default; None<br>Physician's last name |
 | npi                         | String      | Yes      |  Default: none<br>10-digit NPI number of the physician |
 
 
@@ -127,13 +130,13 @@ Supply the specimen object as the 'specimens' array in the request body.
 
 | Parameter                    | Type        | Required | Description           |
 |------------------------------|-------------| :------: |-----------------------|
-| anatomicalDirection          | String      |          | Default: none<br>Direction (ex: "Proximal", "Distal") |
-| anatomicalDistance           | String      |          | Default: none<br>Distance measurement if provided (typically a number) |
-| anatomicalSite               | String      | Yes      | Default: none<br>Location of the sample (ex: "Esophagus", "Bowel")
+| anatomical_direction         | String      |          | Default: none<br>Direction (ex: "Proximal", "Distal") |
+| anatomical_distance          | String      |          | Default: none<br>Distance measurement if provided (typically a number) |
+| anatomical_site              | String      | Yes      | Default: none<br>Location of the sample (ex: "Esophagus", "Bowel")
 | data                         | Object      |          | Default: none<br>Any additional JSON data usefult to the app |
 | description                  | String      |          | Default; none<br>Description of the specimen |
 | number                       | String      |          | Default: none<br>Specimen number if indicated  |
-| ruleOuts                     | Array       |          | Default: none<br>Any requested "rule outs", if supplied as an array.<br>ex: ["Rule Out Colitis"]
+| ruleouts                     | Array       |          | Default: none<br>Any requested "rule outs", if supplied as an array.<br>ex: ["Rule Out Colitis"]
 
 
 
@@ -142,74 +145,74 @@ Supply the specimen object as the 'specimens' array in the request body.
 ``` Javascript
 {
   clientApp: "eCW",
-  clientRecordID: "12345",
-  clientMedicalRecordNumber "MRN32334",
-  clientName: "Atlanta Medical Group",
-  clientNPI: "1248842544",
+  client_req_id: "12345",
+  client_mrn "MRN32334",
+  client_name: "Atlanta Medical Group",
+  client_npi: "1248842544",
   data: {
     some: "other",
     other: "data"
   },
-  diagnosisComments: "Patient has painful abdomen",
-  diagnosisHistory: "Patient history of diabetes and colitis",
-  diagnosisPostOp: "Polyps appear to be benign",
-  diagnosisPreOp: "Blockage of anterior cecum",
+  diagnosis_comments: "Patient has painful abdomen",
+  diagnosis_history: "Patient history of diabetes and colitis",
+  diagnosis_post_op: "Polyps appear to be benign",
+  diagnosis_pre_op: "Blockage of anterior cecum",
   instructions: "Please have pathologist read.",
-  insurancePrimary: {
-    groupNumber: "1534535345",
-    insuredAddress: "1234 Oakdale Rd.",
-    insuredContact: "Beth Orten",
-    memberNumber: "34534534534",
+  insurance_primary: {
+    group_number: "1534535345",
+    insured_ddress: "1234 Oakdale Rd.",
+    insured_contact: "Beth Orten",
+    member_number: "34534534534",
     name: "Bluecross of Georgia",
   },
-  locationName: "Buckhead medical plaza",
-  locationNPI:  "4534543453",
+  location_name: "Buckhead medical plaza",
+  location_npi:  "4534543453",
   patient: {
-    addressStreet1: "237 N.Main Street",
-    addressStreet2: "Apt. 6",
+    address_street_1: "237 N.Main Street",
+    address_street_2: "Apt. 6",
     city: "Jennings",
-    countryCode: "US",
-    dateOfBirth: "1972-04-17",
+    country_code: "US",
+    date_of_birth: "1972-04-17",
     email: "robert@goemail.com",
-    firstName: "Robert",
-    lastName: "Johansen",
-    middleName: "M",
-    phoneNumber: "3188245058",
+    first_name: "Robert",
+    last_name: "Johansen",
+    middle_name: "M",
+    phone_number: "3188245058",
     prefix: "Mr.",
     sex: "M",
-    socialSecurityNumber: "114522444",
+    ssn: "114522444",
     state: "GA",
     suffix: "Jr",
     zip: "70456"
   },
-  physicianPrimary: {
-    firstName: "Louis",
-    lastName: "Shirley",
+  physician_primary: {
+    first_name: "Louis",
+    last_name: "Shirley",
     npi: "1235493233"
   },
-  physicianSecondary: {
-    firstName: "Jackie",
-    lastName: "Ancelet",
-    npi: "12354958973"
+  physician_secondary: {
+    first_name: "Jackie",
+    last_name: "Ancelet",
+    npi: "1235495897"
   },
-  procedureDate: "2019-05-12T17:34:23.000Z",
-  procedureType: "EGD",
+  procedure_date: "2019-05-12T17:34:23.000Z",
+  procedure_type: "EGD",
   specimens: [
-    { anatomicalDirection: "Proximal",
-      anatomicalDistance: "33mm",
-      anatomicalSite: "J-pouch",
+    { anatomical_direction: "Proximal",
+      anatomical_distance: "33mm",
+      anatomical_site: "J-pouch",
       data: {},
       description: "Polyop",
       number: "A",
-      ruleOuts: ["Crohns Disease", "Colitis"]
+      ruleouts: ["Crohns Disease", "Colitis"]
     }, {
-      anatomicalDirection: "Proximal",
-      anatomicalDistance: "33mm",
-      anatomicalSite: "Anus",
+      anatomical_direction: "Proximal",
+      anatomical_distance: "33mm",
+      anatomical_site: "Anus",
       data: {},
       description: "Polyop",
       number: "B",
-      ruleOuts: ["Crohns Disease", "Colitis"]
+      ruleouts: ["Crohns Disease", "Colitis"]
     }
   ],
 }
@@ -248,15 +251,15 @@ Status code and list of invalid parameters and messages.
 [
   {
     location: "body",
-    param: "clientName",
+    param: "client_name",
     value: null,
-    msg: "clientName is required"
+    msg: "client_name is required"
   },
   {
     location: "body",
-    param: "locationNPI",
+    param: "location_npi",
     value: "xyz",
-    msg: "location must ba 10-character string with only numbers and spaces"
+    msg: "location_npi must be a 10-character string with only numbers and spaces"
   }
 ]
 ```

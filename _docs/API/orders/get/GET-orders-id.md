@@ -55,7 +55,7 @@ optional unless marked with `REQUIRED`.
 
 ### Example request
 
-```GET /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/?fields=clientApp,clientName,clientReqId```
+```GET /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/?fields=client_app,client_name,client_record_id```
 
 
 ## Success Responses
@@ -67,7 +67,7 @@ User is authenticated, authorized, and the `order` object was retreived
 successfully.
 
 **Example Request** \
-```GET /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z?fields=clientApp,clientName,clientReqId```
+```GET /orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z?fields=client_app,client_name,client_req_id```
 
 **Returns** \
 The objects matching the query parameters. Only fields selected with the `fields`
@@ -76,10 +76,10 @@ parameter are returned.
 **Example return**
 ``` Javascript
 {
-  orderID: "GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z",
-  clientApp: "eCW",
-  clientName: "Atlanta Medical Center",
-  clientReqID: "43534534",
+  id: "GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z",
+  client_app: "eCW",
+  client_name: "Atlanta Medical Center",
+  client_req_id: "43534534",
 }
 ```
 
@@ -95,14 +95,14 @@ Invalid input was supplied.
 Status code and list of invalid parameters and messages.
 
 **Example request**
-```https://   /api/1/get/orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z?skip=-1&clientNPI=5```
+```https://   /api/1/get/orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z?skip=-1&client_npi=5```
 
 **Example return**
 ``` Javascript
 [
   {
     location: "query",
-    param: "clientNPI",
+    param: "client_npi",
     value: 5,
     msg: "Must be a string of 10 numeric characters"
   },

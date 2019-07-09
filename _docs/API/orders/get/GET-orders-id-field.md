@@ -39,17 +39,17 @@ the token in the Authorization Header as a Bearer Token.
 
 ### Path parameter
 
-Pass the `orderID` of the desired `order` using the route path.
+Pass the `id` of the desired `order` using the route path.
 
 | Path Prarameter  | Type       | Requred | Description                         |
 |------------------|------------| :-----: | ------------------------------------|
-| id               | String     | Yes     | Default: none<br>`OrderID` for the desired `order` |
+| id               | String     | Yes     | Default: none<br>`id` for the desired `order` |
 | field            | String     | Yes     | Default: none<br>One of the [Order fields](../README.md#fields)
 
 
 ### Example request
 
-```/orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/clientApp```
+```/orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/client_app```
 
 
 ## Success Responses
@@ -61,7 +61,7 @@ User is authenticated, authorized, and the `order` object was retreived
 successfully.
 
 **Example Request** \
-```GET/ orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/clientName```
+```GET/ orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/client_name```
 
 **Returns** \
 The object matching the query parameters.

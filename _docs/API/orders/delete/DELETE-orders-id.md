@@ -47,7 +47,7 @@ Pass the `orderID` of the desired `order` using the route path.
 
 ### Example request
 
-```DELETE/ orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/?fields=clientApp,clientName,clientReqId```
+```DELETE/ orders/GVnfEj3KM3RVjLjKFqMqAib6vc6NZs4Z/```
 
 
 ## Success Responses
