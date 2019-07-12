@@ -9,7 +9,7 @@
 ## Request
 
 You need to register and validate your identity before accessing the API.
-Register using the [Sign Up](https://134.209.45.119/register) form. Some basic information
+Register using the [Sign Up](https://104.37.221.155/register) form. Some basic information
 is needed.
 
 After completing the form you will recieve a notification email. This lets you
