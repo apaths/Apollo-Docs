@@ -21,7 +21,7 @@ You can also register with a direct call to the an API enpoint. To request an ac
 make the following call.
 
 **Method:** `POST/` \
-**Route:** `/api/v1/users/users`
+**Route:** `/api/v1/users`
 
 Pass the following parameters in the body.
 
@@ -31,6 +31,8 @@ Pass the following parameters in the body.
 | email            | String       | Yes      | Email used for you account       |
 | password         | String       | Yes      | Password for your account. Requrires 8 characters. One upper case. One lower case. One number |
 
+> Ensure you send 'Content-Type' header with value 'application/json' when sending
+  requests.
 
 ## Validation
 
