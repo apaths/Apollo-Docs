@@ -22,5 +22,5 @@ clients. So we use direct calls from our node applications.
 - [POST/ metaclinic/lookupdata](./post/metaclinic-lookupdata.md)
 
 ### Push a case into LIS
-- [POST/ metaclinic/case](./post/metaclinic-case.md)
+- [POST/ metaclinic/cases](./post/metaclinic-cases.md)
 

@@ -1,4 +1,4 @@
-# `POST/` metaclinic/case
+# `POST/` metaclinic/cases
 
 # WIP:
 
