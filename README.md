@@ -15,7 +15,7 @@ The API consists of four main resources.
 
 | Resource      | Description                                                  |
 |---------------|--------------------------------------------------------------|
-| Cases         | Supports outbound requests for cases ready to import to LIS  |
+| Metaclinic    | Supports outbound requests for cases ready to import to LIS  |
 | Orders        | Provides interface for creating, reading, updating orders    |
 | Pending       | Supports a client application for users to review and verify orders  |
 | Users         | Supports user autorizatin and management                     |
@@ -25,9 +25,9 @@ The API consists of four main resources.
 - [Registration](./_docs/registration/README.md)
 - [Authentication](./_docs/authentication/README.md)
 - [API Reference](./_docs/API/README.md)
+  - [Metaclinic](./_docs/API/metaclinic/README.md)
   - [Orders](./_docs/API/orders/README.md)
   - [Pending](./_docs/soon.md)
-  - [Cases](./_docs/soon.md)
   - [Users](./_docs/soon.md)
 
 

@@ -3,7 +3,7 @@
 ## Overview
 
 - [Introduction](#introduction)
-- [Cases](#cases)
+- [Metaclinic](#metaclinic)
 - [Orders](#orders)
 - [Pending](#pending)
 - [Users](#users)
@@ -13,10 +13,10 @@
 
 The Apollo API exposes four services to other applications.
 
-## Cases
+## Metaclinic
 
-[Cases](./cases/README.md) provides access to the validated cases ready for
-import into downstream applications such as an LIS or other system.
+[Metaclinic](./metaclinic/README.md) interact with the Metaclinic LIMS. Use these
+routes to get lookup reference data and push cases into the LIMS.
 
 ## Orders
 
@@ -35,7 +35,7 @@ appropriate for import into a downstream application.
 retreive access tokens, sign on and sign off.
 
 ## API Reference
-- [Cases](./cases/README.md)
+- [Metaclinic](./metclinic/README.md)
 - [Orders](./orders/README.md)
 - [Pending](./pending/README.md)
 - [Users](./users/README.md)

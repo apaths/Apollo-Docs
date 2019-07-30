@@ -8,14 +8,14 @@
 - [Request construction](#request-construction)
   - [Query fields](#query-fields)
   - [Example request](#example-request)
-- [Success Responses](#success)
+- [Success responses](#success-responses)
   - [`200 OK`](#200-ok)
-- [Client Error Responses](#client-errors-responses)
+- [Client error responses](#client-error-responses)
   - [`400 BAD REQUEST`](#400-bad-request)
   - [`401 UNAUTHORIZED`](#401-unauthorized)
   - [`403 FORBIDDEN`](#403-forbidden)
   - [`429 TOO MANY REQUESTS`](#429-too-many-requests)
-- [Server Error Responses](#server-error-responses)
+- [Server error responses](#server-error-responses)
   - [`500 SERVER ERROR`](#500-server-error)
   - [`503 SERVICE UNAVAILABLE`](#503-service-unavailable)
 
@@ -60,7 +60,7 @@ optional unless marked with `REQUIRED`.
 ```GET /orders?clientApp=eCW&client_npi=43928872844&fields=client_app,client_name,client_record_id```
 
 
-## Success Responses
+## Success responses
 
 #### `200 OK`
 
@@ -89,7 +89,7 @@ parameter are returned.
 ```
 
 
-## Client Errors
+## Client error responses
 
 #### `400 BAD REQUEST`
 
@@ -158,7 +158,7 @@ The following message as a string
 ```
 
 
-## Server Errors
+## Server error responses
 
 
 #### `500 SERVER ERROR`
