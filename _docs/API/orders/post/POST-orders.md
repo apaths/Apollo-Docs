@@ -136,7 +136,8 @@ Supply the specimen object as the 'specimens' array in the request body.
 | data                         | Object      |          | Default: none<br>Any additional JSON data usefult to the app |
 | description                  | String      |          | Default; none<br>Description of the specimen |
 | number                       | String      |          | Default: none<br>Specimen number if indicated  |
-| ruleouts                     | Array       |          | Default: none<br>Any requested "rule outs", if supplied as an array.<br>ex: ["Rule Out Colitis"]
+| ruleouts                     | String      |          | Default: none<br>A comma-separated list of Rule outs R/O _____<br>ex: R/O H.Pylori, R/O Barretts"]
+| type                         | String      |          | Default: none<br>Specimen type. Typically "Biopsy" etc. |
 
 
 
