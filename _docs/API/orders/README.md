@@ -53,7 +53,9 @@ parameter.
 | physician_secondary           | Object      | A [physician object](./post/POST-orders.md#physician-object) for the secondary (referring) physician  |
 | procedure_date                | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | procedure_type                | String      | Type of procedure. Typcally ("EGD", "Colon", "Double"). |
+| screening                     | Boolean     | Indicates procedure is screening or not  |
 | specimens                     | Array       | An array of [specimen objects](./post/POST-orders.md#specimen-object) submitted for pathology  |
+| stat                          | Boolean     | Indicates if order requires stat testing   |
 | status                        | String      | Indicates status. One of `pending`, `converted`, `deleted`  |
 | updated_at                    | String      | Date the order was last updated on the service |
 

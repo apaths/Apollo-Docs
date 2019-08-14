@@ -79,6 +79,8 @@ if all values are valid. These are the updatable fields
 | procedure_date             | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | procedure_type             | String      | Type of procedure. Typcally ("EGD", "Colon", "Double").
 | specimens                  | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
+| screening                  | Boolean     | true indicates procedure is a screening  |
+| stat                       | Boolean     | true to indicate if procedures requires stat testing |
 | status                     | String      | One of: converted|deleted|pending
 
 > NOTE: that for nested object (type is Array or Object) the entire object is replaced.

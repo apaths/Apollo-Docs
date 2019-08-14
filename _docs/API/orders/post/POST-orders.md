@@ -67,7 +67,9 @@ optional unless marked with `REQUIRED`.
 | physician_secondary          | Object      |          | Default: none<br>A [physician object](#physician-object) for the secondary (referring) physician  |
 | procedure_date               | String      | Yes      | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | procedure_type               | String      |          | Default: none<br>Type of procedure. Typcally ("EGD", "Colon", "Double").
+| screening                    | Boolean     |          | Default: false<br>Indicates screeing procedure or not.  |
 | specimens                    | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
+| stat                         | Boolean     |          | Default: false<br>Indicates stat testing required  |
 
 ### Insurance object
 
