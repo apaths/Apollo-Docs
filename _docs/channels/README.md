@@ -1,9 +1,23 @@
 # Channel
 
+- [Introduction](#introduction)
+- [Child Components](#child-components)
+  - [ChannelSidebar](#channelsidebar)
+  - [ChannelFilter](#channelfilter)
+  - [ChannelOrder](#channelorder)
+  - [ChannelOrderList](#channelorderlist)
+- [Slots](#slots)
+- [Props](#props)
+- [Data Members](#data-members)
+- [Mixins](#mixins)
+  - [export](#export)
+  - [import](#import)
+  - [validator](#validator)
+- [Methods]
+- [Useage Example](#useage-example)
 
 
-
-
+https://vue-styleguidist.github.io/docs/Documenting.html#code-comments
 
 ## Introduction
 
@@ -29,6 +43,7 @@ Read more about the [ChannelSidebar](#)
 | filter      | onToggleFilter  | The filter (magnifier) button was pressed, and we toggle the view state. |
 | refresh     | onRefreshOrders | The refresh button was pressed, so we reload the list based on teh current state of the `filter`. |
 
+
 ### ChannelFilter
 
 Read more about hte [ChannelFilter Here](#)
@@ -41,22 +56,6 @@ We pass the channel filter a single prop using the `v-model` shorthand.
 
 We watch that event for changes, and refresh the list based on teh changed
 values.
-
-### ChannelOrderList
-
-Read [ChannelOrderList](#) to learn more detail abou this component.
-
-We pass [ChanelOrderList](#) a single property.
-
-| Prop          | Type     | Description                                           |
-|---------------|----------|-------------------------------------------------------|
-| channelOrders | Array    | An Array of (filtered) orders available on the channel |
-
-We also have one event to handle
-
-| Event       | Local Handler   | description                                 |
-|-------------|-----------------|---------------------------------------------|
-| open        | onOpenOrder     | When the user selects an order, we hide the `ChannelOrderList, and show the `ChannelOrder` |
 
 
 ### ChannelOrder
@@ -77,6 +76,23 @@ We have two events to handle
 |--------------|-----------------|---------------------------------------------|
 | convert      | onConvertOrder  | The user has clicked on the Save to LIS button |
 | cancel       | onCancelOrder   | We don't take any action. Return back to the original channel route (back) |
+
+
+### ChannelOrderList
+
+Read [ChannelOrderList](#) to learn more detail abou this component.
+
+We pass [ChanelOrderList](#) a single property.
+
+| Prop          | Type     | Description                                           |
+|---------------|----------|-------------------------------------------------------|
+| channelOrders | Array    | An Array of (filtered) orders available on the channel |
+
+We also have one event to handle
+
+| Event       | Local Handler   | description                                 |
+|-------------|-----------------|---------------------------------------------|
+| open        | onOpenOrder     | When the user selects an order, we hide the `ChannelOrderList, and show the `ChannelOrder` |
 
 
 
