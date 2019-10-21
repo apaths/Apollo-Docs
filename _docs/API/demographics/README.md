@@ -37,12 +37,12 @@ parameter.
 | client_req_id                 | String      | The clients request id.
 | created_at                    | String      | Date the order was created on the service |
 | id                            | Number      | Unique identifier of the order (READ ONLY)
-| insurance_primary             | Object      | An [insurance object](./post/POST-orders.md#insurance-object) for the primary insurance payer  |
-| insurance_secondary           | Object      | An [insurance object](./post/POST-orders.md##insurance-object) for the secondary insurance payer  |
-| insurance_tertiary            | Object      | An [insurance object](./post/POST-orderes.md##insurance-object) for the primary insurance payer  |
+| insurance_primary             | Object      | An [insurance object](./post/POST-demographics.md#insurance-object) for the primary insurance payer  |
+| insurance_secondary           | Object      | An [insurance object](./post/POST-demographics.md##insurance-object) for the secondary insurance payer  |
+| insurance_tertiary            | Object      | An [insurance object](./post/POST-demographics.md##insurance-object) for the primary insurance payer  |
 | location_name                 | String      | Name of the facility where the procedure was performed  |
 | location_npi                  | String      | 10-digit NPI number of the facility where the procedure was performed |
-| patient                       | Object      | [patient object](./post/POST-orders.md#patient-object) describing the patient |
+| patient                       | Object      | [patient object](./post/POST-demographics.md#patient-object) describing the patient |
 | procedure_date                | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | status                        | String      | A status can be "unmatched", "matchedToOrder" or "deleted"  |
 | updated_at                    | String      | Date the order was last updated on the service |
