@@ -2,10 +2,10 @@
 
 - [Overview](#overview)
 - [Receive Demographics](#receive-demographics)
-- [Receive Partial Orders](#received-partial-orders)
-- [Convert Partial Orders](#convert-partial-order)
+- [Receive Partial Orders as PDF](#received-partial-orders)
+- [Convert Partial Orders](#convert-partial-order-pdf-to-partial-order-api-objects)
 - [Match Demographics to Partial Orders](#match-demographics-to-partial-orders)
-
+- [Create Orders](#create-orders)
 
 ## Overview
 
@@ -39,13 +39,13 @@ Coming soon.
 
 
 
-## Receive Partial Orders
+## Receive Partial Orders as PDF
 
 Coming soon.
 
 
 
-## Convert Partial Orders
+## Convert Partial Orders PDF to Partial Order API objects
 
 Coming soon.
 
@@ -55,3 +55,6 @@ Coming soon.
 
 Coming soon...
 
+
+
+## Create Orders
