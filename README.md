@@ -10,21 +10,12 @@
 The APS Case Intake App provides a landing spot for orders generated from
 HMRs, or any other client software.
 
-It exposes a [REST API](./_docs/API/README.md) to external applications.
-The API consists of four main resources.
-
-| Resource      | Description                                                  |
-|---------------|--------------------------------------------------------------|
-| Demographics  | Supports inbound patient demographics information            |
-| Metaclinic    | Supports outbound requests for cases ready to import to LIS  |
-| Orders        | Provides interface for creating, reading, updating orders    |
-| Pending       | Supports a client application for users to review and verify orders  |
-| Users         | Supports user autorizatin and management                     |
-
 ## Documentation
 
 - [Registration](./_docs/registration/README.md)
 - [Authentication](./_docs/authentication/README.md)
+- Interfaces
+  - [Shreveport](./_docs/shreveport/README.md)
 - [API Reference](./_docs/API/README.md).
   - [Demographics](./_docs/API/demographics/README.md)
   - [Metaclinic](./_docs/API/metaclinic/README.md)
