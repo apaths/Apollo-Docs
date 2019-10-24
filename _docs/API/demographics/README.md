@@ -55,5 +55,5 @@ parameter.
 - [POST/ demographics](./post/POST-demographics.md)
 
 #### Read demographics
-- [GET/ demographics](./post/GET-demographics.md)
+- [GET/ demographics](./get/GET-demographics.md)
 
