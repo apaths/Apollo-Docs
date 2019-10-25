@@ -27,7 +27,7 @@
 
 ## Description
 
-Allows user to update an `order` object by using the `POST/` verb. You need to supply an
+Allows user to update an `shellorder` object by using the `PATCH/` verb. You need to supply an
 [authentication](#authentication) token and provide a valid request
 [body](#body-parameters). The server will [respond](#success-responses) according to
 the results of the request.
@@ -43,11 +43,11 @@ Supply the token in the Authorization Header as a Bearer Token.
 
 ### Path parameters
 
-Pass the objectID of the object you want to modify as a path parameter.
+Pass the ID of the object you want to modify as a path parameter.
 
 | Parameter                  | Type        | Required | Description                        |
 |----------------------------|-------------| :------: |------------------------------------|
-| id                         | String      | Yes      | Default: none<br>ID of the `order` to modify  |
+| id                         | String      | Yes      | Default: none<br>ID of the `shellorder` to modify  |
 
 
 ### Body object
@@ -67,10 +67,6 @@ if all values are valid. These are the updatable fields
 | diagnosis_history          | String      | Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op          | String      | Physician supplied diagnosis information created after the procedure.|
 | diagnosis_pre_op           | String      | Physician supplied diagnosis information created prior to the procedure being performed   |
-| instructions               | String      | Physician instructions sent to the lab |
-| insurance_primary          | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
-| insurance_secondary        | Object      | An [insurance object](#insurance-object) for the secondary insurance payer  |
-| insurance_tertiary         | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
 | lis_case_id                | Number      | `caseID` of the Metaclinic LIS case created from this `Order`.  |
 | lis_case_number            | String      | `caseNumber` of the Metalclnic LIS case created fro this `Order`. |
 | location_name              | String      | Name of the facility where the procedure was performed  |
@@ -80,8 +76,8 @@ if all values are valid. These are the updatable fields
 | physician_secondary        | Object      | A [physician object](#physician-object) for the secondary (referring) physician  |
 | procedure_date             | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | procedure_type             | String      | Type of procedure. Typcally ("EGD", "Colon", "Double").
-| specimens                  | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
 | screening                  | Boolean     | true indicates procedure is a screening  |
+| specimens                  | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
 | stat                       | Boolean     | true to indicate if procedures requires stat testing |
 | status                     | String      | One of: converted|deleted|pending
 

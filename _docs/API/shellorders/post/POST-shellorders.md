@@ -1,4 +1,4 @@
-# POST/ orders
+# POST/ shellorders
 
 
 ## Overview
@@ -24,18 +24,23 @@
   - [`503 SERVICE UNAVAILABLE`](#503-service-unavailable)
 
 
+
 ## Description
 
-Create a new `order` object by using the `POST/` verb. You need to supply an
-[authentication](#authentication) token and provide a valid request
-[body](#body-parameters). The server will [respond](#success-responses) according to
-the results of the request.
+Create a new `shellorder` object by using the `POST/` verb. You need to supply
+an [authentication](#authentication) token and provide a valid request
+[body](#body-parameters). The server will [respond](#success-responses)
+according to the results of the request.
+
+
 
 ## Authentication
 
 You must be an authenticated user to create an order. See [Authentication](../../../authentication/README.md).
 Use the [`users/token`](../../users/get/token.md) endpoint to receive your token.
 Supply the token in the Authorization Header as a Bearer Token.
+
+
 
 ## Body parameters
 
@@ -46,25 +51,22 @@ optional unless marked with `REQUIRED`.
 
 | Parameter                    | Type        | Required | Description                        |
 |------------------------------|-------------| :------: |------------------------------------|
-| client_app                   | String      | Yes      | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
+| client_app                   | String      |          | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_req_id                | String      |          | Default: none<br>An ID the client HMR uses to track the order. |
-| client_mrn                   | String      |          | Default: none<br>An ID the client HMR provides for the patien's Medical Record Number (mrn) |
+| client_mrn                   | String      | Yes      | Default: none<br>An ID the client HMR provides for the patien's Medical Record Number (mrn) |
 | client_name                  | String      | Yes      | Default: none<br>Name of the ordering client |
 | client_npi                   | String      | Yes      | Default: none<br>10-digit NPI number of the ordering customer  |
 | data                         | Object      |          | Default: none<br>A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
+| demographics_id              | Number      |          | Default: none<br>An ID (foreign key) to a [Demographics](../../demographics/README.md)  |
 | diagnosis_comments           | String      |          | Default: none<br>Any additional comments |
 | diagnosis_history            | String      |          | Default: none<br>Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op            | String      |          | Default: none<br>Physician supplied diagnosis information created after the procedure.|
 | diagnosis_pre_op             | String      |          | Default: none<br>Physician supplied diagnosis information created prior to the procedure being performed   |
-| instructions                 | String      |          | Default: none<br>Physician instructions sent to the lab |
-| insurance_primary            | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
-| insurance_secondary          | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the secondary insurance payer  |
-| insurance_tertiary           | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
 | location_name                | String      | Yes      | Default: none<br>Name of the facility where the procedure was performed  |
 | location_npi                 | String      | Yes      | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
 | lis_case_id                  | Number      |          | Default: none<br>`caseID` for the Metaclinic LIS case created from this Order.  |
 | lis_case_number              | String      |          | Default: none<br>`caseNumber` for the Metaclinic LIS case created fro this Order.  |
-| patient                      | Object      | Yes      | Default: none<br>A [patient object](#patient-object) describing the patient |
+| patient                      | Object      | Yes      | Default: none<br>A [patient object](#patient-object) describing the patient. Only 'patient.first_name' and 'patient.last_name' are required |
 | physician_primary            | Object      | Yes      | Default: none<br>A [physician object](#physician-object) for the primary (ordering) physician  |
 | physician_secondary          | Object      |          | Default: none<br>A [physician object](#physician-object) for the secondary (referring) physician  |
 | procedure_date               | String      | Yes      | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
@@ -72,22 +74,6 @@ optional unless marked with `REQUIRED`.
 | screening                    | Boolean     |          | Default: false<br>Indicates screeing procedure or not.  |
 | specimens                    | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
 | stat                         | Boolean     |          | Default: false<br>Indicates stat testing required  |
-
-### Insurance object
-
-Supply the insurance object as an `insurance_primary`, `insurance_secondary`, or
-`insurance_tertiary` body parameter.
-
-| Parameter                   | Type        | Required | Description            |
-|-----------------------------|-------------| :------: |------------------------|
-| group_number                | String      | Yes      | Default: none<br>Insurance group number  |
-| insured_address             | String      |          | Default: none<br>Insured person's address  |
-| insured_contact             | String      | Yes      | Default: none<br>Insuran  |
-| insured_member_number       | String      | Yes      | Default: none<br>Member's insurance number  |
-| insured_member_name         | String      | Yes      | Default: none<br>Name of the insured member (if different than PT)  |
-| insured_relationship        | String      |          | Default: none<br>Rleationship between the patient and insured policy holder (ex: "Parent", "Spouse")  |
-| member_number               | String      |          | Default: none<br>Patient's member number.  |
-| name                        | String      | Yes      | Default: none<br>Name of the insurance payer  |
 
 
 ### Patient object
@@ -114,7 +100,6 @@ Supply the patient object as a body parameter
 | zip                         | String      |          | Default: none<br>ZIP code of patient |
 
 
-
 ### Physisican object
 
 Supply the phyisican object as the `primary_physician` or `secondary_physican`
@@ -125,7 +110,6 @@ body parameters.
 | first_name                  | String      | Yes      | Default: none<br>Physician's first name |
 | last_name                   | String      | Yes      | Default; None<br>Physician's last name |
 | npi                         | String      | Yes      |  Default: none<br>10-digit NPI number of the physician |
-
 
 
 ### Specimen object
@@ -149,7 +133,7 @@ Supply the specimen object as the 'specimens' array in the request body.
 
 ``` Javascript
 {
-  clientApp: "eCW",
+  clientApp: "Provation",
   client_req_id: "12345",
   client_mrn "MRN32334",
   client_name: "Atlanta Medical Group",
@@ -162,33 +146,12 @@ Supply the specimen object as the 'specimens' array in the request body.
   diagnosis_history: "Patient history of diabetes and colitis",
   diagnosis_post_op: "Polyps appear to be benign",
   diagnosis_pre_op: "Blockage of anterior cecum",
-  instructions: "Please have pathologist read.",
-  insurance_primary: {
-    group_number: "1534535345",
-    insured_ddress: "1234 Oakdale Rd.",
-    insured_contact: "Beth Orten",
-    member_number: "34534534534",
-    name: "Bluecross of Georgia",
-  },
   location_name: "Buckhead medical plaza",
   location_npi:  "4534543453",
   patient: {
-    address_street_1: "237 N.Main Street",
-    address_street_2: "Apt. 6",
-    city: "Jennings",
-    country_code: "US",
     date_of_birth: "1972-04-17",
-    email: "robert@goemail.com",
     first_name: "Robert",
     last_name: "Johansen",
-    middle_name: "M",
-    phone_number: "3188245058",
-    prefix: "Mr.",
-    sex: "M",
-    ssn: "114522444",
-    state: "GA",
-    suffix: "Jr",
-    zip: "70456"
   },
   physician_primary: {
     first_name: "Louis",
@@ -201,7 +164,7 @@ Supply the specimen object as the 'specimens' array in the request body.
     npi: "1235495897"
   },
   procedure_date: "2019-05-12T17:34:23.000Z",
-  procedure_type: "EGD",
+  procedure_type: "Upper GI Endoscopy",
   specimens: [
     { anatomical_direction: "Proximal",
       anatomical_distance: "33mm",

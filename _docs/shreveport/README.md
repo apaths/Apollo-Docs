@@ -34,11 +34,11 @@ Assembling a complete case follows of these steps:
     `server/data/shellorders/` folder for troubleshooting. Configuration
     property `shellOrders.saveJSON` toggles this feature.
 
-* A Lab user then reviews the [Shell Order](#../API/shellorder/README.md) using
+* A Lab user then reviews the [Shell Order](../API/shellorder/README.md) using
   the [Apollo Client](https://github.com/apaths/apollo-client). When they are
   satisfied with the values they use the tool to insert the shell order into
   the Shreveport (GIS) instance of the Metaclinic LIS.
-  <br>
+  <br><br>
   *NOTE: At this point the case may proceed through the lab processing portion of
   the Metaclinic workflow*
 
@@ -51,7 +51,9 @@ Assembling a complete case follows of these steps:
     to any [Shell Order](#../API/shellorder/README.md).
   - Pairs any unmatched [Demographic](../API/demographics/README.md) records
     to any cases that have been ingested into the APS instance of the
-    Metaclinic LIS. *Note: we use the MRN and the accessionNumber to make this
+    Metaclinic LIS.
+    <br><br>
+    *Note: we use the MRN and the accessionNumber to make this
     match.*
 
 * An APS or Shrevport(GIS) accessioner then reviews the demographic
@@ -60,7 +62,7 @@ Assembling a complete case follows of these steps:
   the Shrevport LIS instance, and/or the APS LIS instance. When sending to the
   APS LIS we warn the user that the operation destroys any changes to the
   fields made in LIS.
-  <br>
+  <br><br>
   *NOTE: demographics cannot create a case, only modify an existing case.*
 
 After completing these steps we will have a complete Case object in the
