@@ -33,7 +33,7 @@ Soon.
 #### Shreveport
 
 Shreveport uses Provation and eCW imports to create shellorders and demographics.
-Read more about this Channel in the [Shreveport documentation](./shreveport/README.md)
+Read more about this Channel in the [Shreveport documentation](./_docs/shreveport/README.md)
 
 
 

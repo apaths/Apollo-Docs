@@ -1,4 +1,4 @@
-# PUT/ orders/{id}
+# PATCH/ orders/{id}
 
 
 ## Overview

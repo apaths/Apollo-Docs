@@ -1,4 +1,4 @@
-# Orders
+# Shell Orders
 
 ## Overview
 
@@ -57,11 +57,11 @@ parameter.
 | diagnosis_post_op             | String      | Physician supplied diagnosis information created after the procedure.|
 | diagnosis_pre_op              | String      | Physician supplied diagnosis information created prior to the procedure being performed   |
 | id                            | Number      | Unique identifier of the order (READ ONLY)
-| lis_case_id                   | Number      | `caseID` of the Metaclinic LIS case created from this `Order`.  |
-| lis_case_number               | String      | `caseNumber` of the Metalclnic LIS case created fro this `Order`. |
+| lis_case_id                   | Number      | `caseID` of the Metaclinic LIS case created from this `ShellOrder`.  |
+| lis_case_number               | String      | `caseNumber` of the Metalclnic LIS case created fro this `ShellOrder`. |
 | location_name                 | String      | Name of the facility where the procedure was performed  |
 | location_npi                  | String      | 10-digit NPI number of the facility where the procedure was performed |
-| patient                       | Object      | [patient object](./post/POST-orders.md#patient-object) describing the patient. Note that the patient fields duplicate fields available in the [Demographics](../demographics/README.md). All patient data in the Shell Case may be overwritten at any time by the Demographics[Demographics](../demographics/README.md) file. See [Data sources and state](../shrevepot/README.md) for more detail. |
+| patient                       | Object      | [patient object](./post/POST-orders.md#patient-object) describing the patient. Note that the patient fields duplicate fields available in the [Demographics](../demographics/README.md). All patient data in the Shell Case may be overwritten at any time by the [Demographics](../demographics/README.md) being pushed to the case. See [Data sources and state](../shrevepot/README.md) for more detail. |
 | physician_primary             | Object      | A [physician object](./post/POST-orders.md#physician-object) for the primary (ordering) physician  |
 | physician_secondary           | Object      | A [physician object](./post/POST-orders.md#physician-object) for the secondary (referring) physician  |
 | procedure_date                | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
