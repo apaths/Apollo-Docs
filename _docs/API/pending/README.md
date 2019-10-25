@@ -1,3 +1,0 @@
-# Authentication Service
-
-## Coming soon
