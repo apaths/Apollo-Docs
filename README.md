@@ -3,25 +3,59 @@
 ## Overview
 
 - [Introduction](#introduction)
-- [Documentation](#documentation)
+- [Channels](#channels)
+  - [Hattiesburg](#hattiesburg)
+  - [Lafayette](#lafayette)
+  - [Shreveport](#shreveport)
+- [API Reference](#api-reference)
+  - [Registration](#registration)
+  - [Authentication](#autentication)
+  - [Services](#services)
+
 
 ## Introduction
 
 The APS Case Intake App provides a landing spot for orders generated from
 HMRs, or any other client software.
 
-## Documentation
+
+
+## Channels
+
+#### Hattiesburg
+
+Soon.
+
+#### Lafayette
+
+Soon.
+
+#### Shreveport
+
+Shreveport uses Provation and eCW imports to create shellorders and demographics.
+Read more about this Channel in the [Shreveport documentation](./shreveport/README.md)
+
+
+
+## API Reference
+
+#### Registration
 
 - [Registration](./_docs/registration/README.md)
+
+#### Authentication
+
 - [Authentication](./_docs/authentication/README.md)
-- Interfaces
-  - [Shreveport](./_docs/shreveport/README.md)
-- [API Reference](./_docs/API/README.md).
-  - [Demographics](./_docs/API/demographics/README.md)
-  - [Metaclinic](./_docs/API/metaclinic/README.md)
-  - [Orders](./_docs/API/orders/README.md)
-  - [Pending](./_docs/soon.md)
-  - [Users](./_docs/soon.md)
+
+
+#### Services
+
+- [Demographics](./_docs/API/demographics/README.md)
+- [Metaclinic](./_docs/API/metaclinic/README.md)
+- [Orders](./_docs/API/orders/README.md)
+- [Pending](./_docs/soon.md)
+- [Shell Orders](./_docs/API/shellorders/README.md)
+- [Users](./_docs/soon.md)
 
 
 

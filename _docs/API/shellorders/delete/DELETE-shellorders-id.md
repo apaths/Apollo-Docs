@@ -41,7 +41,7 @@ Pass the `orderID` of the desired `order` using the route path.
 
 | Path Prarameter  | Type       | Requred | Description                         |
 |------------------|------------| :-----: | ------------------------------------|
-| id               | String     | Yes     | Default: none<br>`OrderID` for the desired `order` |
+| id               | String     | Yes     | Default: none<br>`id` for the desired `shellorder` |
 
 
 ### Example request
