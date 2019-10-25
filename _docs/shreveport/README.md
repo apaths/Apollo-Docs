@@ -22,10 +22,14 @@ LIS.
 Assembling a complete case follows of these steps:
 
 * Patients receive a procedure (Upper GI endoscopy, or Colonoscopy) or both
-  procedures. When preforming the procedures GIS staff enter the lab request in Provation which
-  then exports (via Black Ice print driver) a PDF that lands in the `var/sftp/uploads/archive`
-  folder. One PDF is created for each procedure. If the patient recieved both
-  procedures, two PDFs are created, and designated in the `Procedure Type`
+  procedures.
+  - When preforming the procedures GIS staff enter the lab request in Provation.
+  - Staff print the order and the Black Ice print driver makes a PDF that lands
+    in the `var/sftp/uploads/archive` folder.
+
+    *Note: One PDF is created for **each** procedure. If the patient recieved
+    both procedures (a "double"), two PDFs are created, and differentiated
+    in the `Procedure Type` field.
 
 * Periodically the Apollo-BOT runs processes each PDF requisition. It...
   - Parses the PDF file into a useable JavaScript object.
@@ -38,8 +42,8 @@ Assembling a complete case follows of these steps:
   the [Apollo Client](https://github.com/apaths/apollo-client). When they are
   satisfied with the values they use the tool to insert the shell order into
   the Shreveport (GIS) instance of the Metaclinic LIS.
-  <br><br>
-  *NOTE: At this point the case may proceed through the lab processing portion of
+
+  *Note: At this point the case may proceed through the lab processing portion of
   the Metaclinic workflow*
 
 * At some (asynchronous) time demographic information is received from
@@ -52,7 +56,7 @@ Assembling a complete case follows of these steps:
   - Pairs any unmatched [Demographic](../API/demographics/README.md) records
     to any cases that have been ingested into the APS instance of the
     Metaclinic LIS.
-    <br><br>
+
     *Note: we use the MRN and the accessionNumber to make this
     match.*
 
@@ -62,7 +66,7 @@ Assembling a complete case follows of these steps:
   the Shrevport LIS instance, and/or the APS LIS instance. When sending to the
   APS LIS we warn the user that the operation destroys any changes to the
   fields made in LIS.
-  <br><br>
+
   *NOTE: demographics cannot create a case, only modify an existing case.*
 
 After completing these steps we will have a complete Case object in the
