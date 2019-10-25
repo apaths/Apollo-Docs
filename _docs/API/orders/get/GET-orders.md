@@ -50,6 +50,8 @@ optional unless marked with `REQUIRED`.
 | location_name              | String      |          | Default: none<br>A comman separated list of facility names where the procedure was performed  |
 | location_npi               | String      |          | Default: none<br>A comma separated list of 10-digit NPI number of the facility where the procedure was performed |
 | limit                      | number      |          | Default: 100<br>A number between 0-1000. Limit results to this many `orders`  |
+| lis_case_number            | String      |          | Default: none<br>An LIS caseNumber to match.  |
+| lis_case_id                | Number      |          | Default: none<br>An LIS caseID to match. |
 | procedure_date_from        | String      |          | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | procedure_date_thru        | String      |          | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | skip                       | number      |          | Default: 0<br>A positive integer. Skips the result to the n-th supplied number |

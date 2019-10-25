@@ -46,6 +46,8 @@ parameter.
 | insurance_secondary           | Object      | An [insurance object](./post/POST-orders.md##insurance-object) for the secondary insurance payer  |
 | insurance_tertiary            | Object      | An [insurance object](./post/POST-orderes.md##insurance-object) for the primary insurance payer  |
 | imported_at                   | String      | Date order was imported into the resource  |
+| lis_case_id                   | Number      | `caseID` of the Metaclinic LIS case created from this `Order`.  |
+| lis_case_number               | String      | `caseNumber` of the Metalclnic LIS case created fro this `Order`. |
 | location_name                 | String      | Name of the facility where the procedure was performed  |
 | location_npi                  | String      | 10-digit NPI number of the facility where the procedure was performed |
 | patient                       | Object      | [patient object](./post/POST-orders.md#patient-object) describing the patient |
