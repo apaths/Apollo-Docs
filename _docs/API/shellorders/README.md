@@ -81,7 +81,7 @@ parameter.
 - [GET/ orders](./get/GET-shellorders.md)
 
 ### Update an Existing Shell Order
-- [PATCH/ orders/{id}](./put/PATCH-shellorders-id.md)
+- [PATCH/ orders/{id}](./patch/PATCH-shellorders-id.md)
 
 ### Delete a Shell Order
 - [DELETE/ orders/{id}](./delete/DELETE-shellorders-id.md)

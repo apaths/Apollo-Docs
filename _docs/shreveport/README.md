@@ -29,12 +29,12 @@ Assembling a complete case follows of these steps:
 
 * Periodically the Apollo-BOT runs processes each PDF requisition. It...
   - Parses the PDF file into a useable JavaScript object.
-  - Creates a [Shell Order](../API/shellorder/README.md) object.
+  - Creates a [Shell Order](../API/shellorders/README.md) object.
   - Optionally writes the JavaScript object to a JSON file object in the
     `server/data/shellorders/` folder for troubleshooting. Configuration
     property `shellOrders.saveJSON` toggles this feature.
 
-* A Lab user then reviews the [Shell Order](../API/shellorder/README.md) using
+* A Lab user then reviews the [Shell Order](../API/shellorders/README.md) using
   the [Apollo Client](https://github.com/apaths/apollo-client). When they are
   satisfied with the values they use the tool to insert the shell order into
   the Shreveport (GIS) instance of the Metaclinic LIS.
@@ -48,7 +48,7 @@ Assembling a complete case follows of these steps:
 
 * Periodically the Apollo-BOT runs a job that:
   - Pairs any unmatched [Demographic](../API/demographics/README.md) records
-    to any [Shell Order](#../API/shellorder/README.md).
+    to any [Shell Order](../API/shellorder/README.md).
   - Pairs any unmatched [Demographic](../API/demographics/README.md) records
     to any cases that have been ingested into the APS instance of the
     Metaclinic LIS.
