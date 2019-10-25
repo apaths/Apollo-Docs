@@ -1,38 +1,98 @@
 # Shreveport (GIS) Imports
 
 - [Overview](#overview)
-- [Data sources and states](#data-sources-and-states)
 - [Receive Demographics](#receive-demographics)
 - [Receive Partial Orders as PDF](#received-partial-orders)
 - [Convert Partial Orders](#convert-partial-order-pdf-to-partial-order-api-objects)
 - [Match Demographics to Partial Orders](#match-demographics-to-partial-orders)
 - [Create Orders](#create-orders)
+- [Data sources and states](#data-sources-and-states)
 
 
 
 ## Overview
 
-Shreveport case imports follows of these steps:
+Shreveport (GIS) cases arrive in two parts. First, an electronic
+requisition arrives from the Gastroenterologist via Provation. Separately,
+and typically (but not necessarily) patient demographics arrive via
+eClinicalWorks. The combination of these two components complete the
+information needed to create, process, and report a case in the Metaclinic
+LIS.
 
-* Patient demographics are entered by GIS staff into eClinicalWorks (eCW). eCW
-  pushes an HL7 message to our MIRTH server which ETLs the message into a useable
-  JSON object. MIRTH server inserts the transformed demographic information into
-  the Apollo lander as a [Demographic](../API/demographics/README.md) object.
-* Procedure orders are uploaded from GIS' Provation instance via SFTP to the
-  `/var/sftp/uploads` folder. The files arrive as *.PDF files. Periodically,
-  the Apollo-BOT runs a job that converts the PDF files into JSON files. The JSON
-  files are stored in the `/var/www/apollo/server/data/orders` folder. Converted
-  PDF files are moved into the `/var/sftp/uploads/archive` folder.
-* Periodically the Apoll-BOT ingests each JSON files into a [Partial Order](../API/partialorder/README.md)
-  object.
-* The Apollo-BOT periodocially runs a job to match any unmatched [Demographic](../API/demographics/README.md)
-  objects with any unmatched [Partial Order](../API/partialorder/README.md) objects.
-  Any orders that can be matched are then inserted into the [Orders](../API/orders/README.md)
-  collection.
-* Finally, an APS accessioner then uses the Apollo Lander client appliation to
-  review any pending [Orders](../API/orders/README.md). Accessioners access the
-  list of pending cases by using the **Shreveport** channel. Accessioners then
-  make any corrections and insert the case into the Metaclinic LIS.
+Assembling a complete case follows of these steps:
+
+* Patients receive a procedure (Upper GI endoscopy, or Colonoscopy) or both
+  procedures. When preforming the procedures GIS staff enter the lab request in Provation which
+  then exports (via Black Ice print driver) a PDF that lands in the `var/sftp/uploads/archive`
+  folder. One PDF is created for each procedure. If the patient recieved both
+  procedures, two PDFs are created, and designated in the `Procedure Type`
+
+* Periodically the Apollo-BOT runs processes each PDF requisition. It...
+  - Parses the PDF file into a useable JavaScript object.
+  - Creates a [Shell Order](../API/shellorder/README.md) object.
+  - Optionally writes the JavaScript object to a JSON file object in the
+    `server/data/shellorders/` folder for troubleshooting. Configuration
+    property `shellOrders.saveJSON` toggles this feature.
+
+* A Lab user then reviews the [Shell Order](#../API/shellorder/README.md) using
+  the [Apollo Client](https://github.com/apaths/apollo-client). When they are
+  satisfied with the values they use the tool to insert the shell order into
+  the Shreveport (GIS) instance of the Metaclinic LIS.
+  <br>
+  *NOTE: At this point the case may proceed through the lab processing portion of
+  the Metaclinic workflow*
+
+* At some (asynchronous) time demographic information is received from
+  eClinicalWorks (eCW) via the MIRTH server. Incoming messages are pushed
+  into a [Demographic](../API/demographics/README.md) object.
+
+* Periodically the Apollo-BOT runs a job that:
+  - Pairs any unmatched [Demographic](../API/demographics/README.md) records
+    to any [Shell Order](#../API/shellorder/README.md).
+  - Pairs any unmatched [Demographic](../API/demographics/README.md) records
+    to any cases that have been ingested into the APS instance of the
+    Metaclinic LIS. *Note: we use the MRN and the accessionNumber to make this
+    match.*
+
+* An APS or Shrevport(GIS) accessioner then reviews the demographic
+  information receivedi the [Apollo Client](https://github.com/apaths/apollo-client).
+  When satisfied with the results, they can send the demographic infomraton to
+  the Shrevport LIS instance, and/or the APS LIS instance. When sending to the
+  APS LIS we warn the user that the operation destroys any changes to the
+  fields made in LIS.
+  <br>
+  *NOTE: demographics cannot create a case, only modify an existing case.*
+
+After completing these steps we will have a complete Case object in the
+downstream Metaclinic LIS.
+
+## Receive Demographics
+
+Coming soon.
+
+
+
+## Receive Partial Orders as PDF
+
+Coming soon.
+
+
+
+## Convert Partial Orders PDF to Partial Order API objects
+
+Coming soon.
+
+
+
+## Match Demographics to Partial Orders
+
+Coming soon.
+
+
+
+## Create Orders
+
+Coming soon.
 
 
 
@@ -82,32 +142,4 @@ Shreveport case imports follows of these steps:
 
 
 
-
-## Receive Demographics
-
-Coming soon.
-
-
-
-## Receive Partial Orders as PDF
-
-Coming soon.
-
-
-
-## Convert Partial Orders PDF to Partial Order API objects
-
-Coming soon.
-
-
-
-## Match Demographics to Partial Orders
-
-Coming soon.
-
-
-
-## Create Orders
-
-Coming soon.
 
