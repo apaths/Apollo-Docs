@@ -1,36 +1,45 @@
-# Orders
+# Apollo API
 
 ## Overview
 
 - [Introduction](#introduction)
+- [Metaclinic](#metaclinic)
+- [Orders](#orders)
+- [Pending](#pending)
+- [Users](#users)
 - [API Reference](#api-reference)
-
 
 ## Introduction
 
-HMRs and other clients create `orders`. `Orders` are considered "dirty" source
-data. The incoming `Order` objects will be conditioned and validated by
-app users before becoming `cases` that are ready for import into the LIS.
+The Apollo API exposes four services to other applications.
 
-Before you can access the `orders` resource must first:
+## Metaclinic
 
-- [Register as a user](../registration/readme.md)
-- [Receive an authorization token](../users/authenticate.md)
-- [Call the desired API endpoints](#api-reference)
+[Metaclinic](./metaclinic/README.md) interact with the Metaclinic LIMS. Use these
+routes to get lookup reference data and push cases into the LIMS.
 
+## Orders
+
+[Orders](./orders/README.md) service puts and manages new laboratory orders
+on the application.
+
+## Pending
+
+[Pending](./pending/README.md) service provides support to the front-end client
+application where accessioners validate the `orders` data to ensure it's
+appropriate for import into a downstream application.
+
+## Users
+
+[Users](./users/README.md) service allows users to register with the app,
+retreive access tokens, sign on and sign off.
 
 ## API Reference
+- [Metaclinic](./metclinic/README.md)
+- [Orders](./orders/README.md)
+- [Pending](./pending/README.md)
+- [Users](./users/README.md)
 
-### Create an new order
-- [`*POST/* orders`](./post/orders.md)
 
-### Read an order
-- [`*GET/* orders](./get/orders.md)
-- [`*GET/* orders/{id}](./get/order-id.md)
-- [`*GET/* order/{id}/{field}`](./get/order-id-field.md)
 
-### Modify an order
-- [`*PUT/* orders/{id}`](./put/order-id.md)
 
-### Delete an order
-- [`*DELETE/* orders/{id}`](./delete/order-id.md)

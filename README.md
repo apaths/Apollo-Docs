@@ -3,34 +3,59 @@
 ## Overview
 
 - [Introduction](#introduction)
-- [Documentation](#documentation)
+- [Channels](#channels)
+  - [Hattiesburg](#hattiesburg)
+  - [Lafayette](#lafayette)
+  - [Shreveport](#shreveport)
+- [API Reference](#api-reference)
+  - [Registration](#registration)
+  - [Authentication](#autentication)
+  - [Services](#services)
+
 
 ## Introduction
 
 The APS Case Intake App provides a landing spot for orders generated from
 HMRs, or any other client software.
 
-It exposes a [REST API](./_docs/API/README.md) to external applications.
-The API consists of four main resources.
 
-|---------------|--------------------------------------------------------------|
-| Resource      | Description                                                  |
-|---------------|--------------------------------------------------------------|
-| Cases         | Supports outbound requests for cases ready to import to LIS  |
-| Orders        | Provides interface for creating, reading, updating orders    |
-| Pending       | Supports a client application for users to review and verify orders  |
-| Users         | Supports user autorizatin and management                     |
-|---------------|--------------------------------------------------------------|
 
-## Documentation
+## Channels
+
+#### Hattiesburg
+
+Soon.
+
+#### Lafayette
+
+Soon.
+
+#### Shreveport
+
+Shreveport uses Provation and eCW imports to create shellorders and demographics.
+Read more about this Channel in the [Shreveport documentation](./_docs/shreveport/README.md)
+
+
+
+## API Reference
+
+#### Registration
 
 - [Registration](./_docs/registration/README.md)
-- [Authorization](./_docs/authorization/README.md)
-- [API Reference](./_docs/API/README.md)
-  -[Orders](./_docs/API/orders/README.md)
-  -[Pending](./_docs/API/pending/README.md)
-  -[Cases](./_docs/API/cases/README.md)
-  -[Users](./_docs/API/users/README.md)
+
+#### Authentication
+
+- [Authentication](./_docs/authentication/README.md)
+
+
+#### Services
+
+- [Demographics](./_docs/API/demographics/README.md)
+- [Metaclinic](./_docs/API/metaclinic/README.md)
+- [Orders](./_docs/API/orders/README.md)
+- [Pending](./_docs/soon.md)
+- [Shell Orders](./_docs/API/shellorders/README.md)
+- [Users](./_docs/soon.md)
 
 
 
