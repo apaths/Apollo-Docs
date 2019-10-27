@@ -36,6 +36,7 @@ parameter.
 | client_npi                    | String      | 10-digit NPI number of the ordering customer  |
 | created_at                    | String      | Date the order was created on the service |
 | data                          | Object      | A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
+| demog_id                      | Number      | An id (foreign key) to a linked demographc record. Used for "shell" orders only. |
 | diagnosis_comments            | String      | Any additional comments |
 | diagnosis_history             | String      | Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op             | String      | Physician supplied diagnosis information created after the procedure.|
@@ -46,7 +47,8 @@ parameter.
 | insurance_secondary           | Object      | An [insurance object](./post/POST-orders.md##insurance-object) for the secondary insurance payer  |
 | insurance_tertiary            | Object      | An [insurance object](./post/POST-orderes.md##insurance-object) for the primary insurance payer  |
 | imported_at                   | String      | Date order was imported into the resource  |
-| lis_cases                     | Array       | Array of objects showing the cases that are linked with the demographics. |
+| is_shell_order                | Boolean     | Indicates if the order is a "shell" order. "Shell" orders will not contain demographic information, except the minimal amount required to create an LIS case. |
+| lis_case_id                   | Number      | `caseID` of the Metaclinic LIS case created from this `Order`.  |
 | lis_case_number               | String      | `caseNumber` of the Metalclnic LIS case created fro this `Order`. |
 | location_name                 | String      | Name of the facility where the procedure was performed  |
 | location_npi                  | String      | 10-digit NPI number of the facility where the procedure was performed |
