@@ -63,10 +63,12 @@ if all values are valid. These are the updatable fields
 | client_name                | String      | Default: none<br>Name of the ordering client |
 | client_npi                 | String      | Default: none<br>10-digit NPI number of the ordering customer  |
 | data                       | Object      | A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
+| demog_id                   | Number      | ID of the demographic linked to this order ("shell" cases only) |
 | diagnosis_comments         | String      | Any additional comments |
 | diagnosis_history          | String      | Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op          | String      | Physician supplied diagnosis information created after the procedure.|
 | diagnosis_pre_op           | String      | Physician supplied diagnosis information created prior to the procedure being performed   |
+| is_shell_order             | Boolean     | Indicates if this is a "shell" order. |
 | instructions               | String      | Physician instructions sent to the lab |
 | insurance_primary          | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
 | insurance_secondary        | Object      | An [insurance object](#insurance-object) for the secondary insurance payer  |

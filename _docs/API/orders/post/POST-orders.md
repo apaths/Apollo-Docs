@@ -52,6 +52,7 @@ optional unless marked with `REQUIRED`.
 | client_name                  | String      | Yes      | Default: none<br>Name of the ordering client |
 | client_npi                   | String      | Yes      | Default: none<br>10-digit NPI number of the ordering customer  |
 | data                         | Object      |          | Default: none<br>A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
+| demog_id                     | Number      |          | Default: none<br>ID of a linked [demographic](../../demographics/README.md) record. Use only for "shell" cases |
 | diagnosis_comments           | String      |          | Default: none<br>Any additional comments |
 | diagnosis_history            | String      |          | Default: none<br>Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op            | String      |          | Default: none<br>Physician supplied diagnosis information created after the procedure.|
@@ -60,6 +61,7 @@ optional unless marked with `REQUIRED`.
 | insurance_primary            | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
 | insurance_secondary          | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the secondary insurance payer  |
 | insurance_tertiary           | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
+| is_shell_order               | Boolean     |          | Default: false<bR>Indicates if the order is a "shell" order. |
 | location_name                | String      | Yes      | Default: none<br>Name of the facility where the procedure was performed  |
 | location_npi                 | String      | Yes      | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
 | lis_case_id                  | Number      |          | Default: none<br>`caseID` for the Metaclinic LIS case created from this Order.  |
