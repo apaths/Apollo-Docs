@@ -31,12 +31,12 @@ Assembling a complete case follows of these steps:
 
 * Periodically the Apollo-BOT runs processes each PDF requisition. It...
   - Parses the PDF file into a useable JavaScript object.
-  - Creates a [Shell Order](../API/shellorders/README.md) object.
+  - Creates a ["Shell" Order](../shellorders/README.md) object with property `is_shell_order` set to `true`.
   - Optionally writes the JavaScript object to a JSON file object in the
     `server/data/shellorders/` folder for troubleshooting. Configuration
     property `shellOrders.saveJSON` toggles this feature.
 
-* A Lab user then reviews the [Shell Order](../API/shellorders/README.md) using
+* A Lab user then reviews the ["Shell" Order](../shellorders/README.md) using
   the [Apollo Client](https://github.com/apaths/apollo-client). When they are
   satisfied with the values they use the tool to insert the shell order into
   the Shreveport (GIS) instance of the Metaclinic LIS. **At this point the case
@@ -48,14 +48,14 @@ Assembling a complete case follows of these steps:
 
 * Periodically the Apollo-BOT runs a job that:
   - Pairs any unmatched [Demographic](../API/demographics/README.md) records
-    to any [Shell Order](../API/shellorder/README.md).
+    to any ["Shell" Order](../shellorders/README.md).
   - Pairs any unmatched [Demographic](../API/demographics/README.md) records
     to any cases that have been ingested into the APS instance of the
     Metaclinic LIS. *Note: we use the MRN and the accessionNumber to make this
     match.*
 
 * An APS or Shrevport(GIS) accessioner then reviews the demographic
-  information receivedi the [Apollo Client](https://github.com/apaths/apollo-client).
+  information received in the [Apollo Client](https://github.com/apaths/apollo-client).
   When satisfied with the results, they can send the demographic infomraton to
   the Shrevport LIS instance, and/or the APS LIS instance. When sending to the
   APS LIS we warn the user that the operation destroys any changes to the

@@ -11,6 +11,7 @@
   - [Registration](#registration)
   - [Authentication](#autentication)
   - [Services](#services)
+- [Special Topics](#special-topics)
 
 
 ## Introduction
@@ -54,8 +55,13 @@ Read more about this Channel in the [Shreveport documentation](./_docs/shrevepor
 - [Metaclinic](./_docs/API/metaclinic/README.md)
 - [Orders](./_docs/API/orders/README.md)
 - [Pending](./_docs/soon.md)
-- [Shell Orders](./_docs/API/shellorders/README.md)
 - [Users](./_docs/soon.md)
+
+
+
+## Special Topics
+
+- [Shell Orders](./_docs/shellorders/README.md)
 
 
 
