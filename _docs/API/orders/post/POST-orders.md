@@ -52,7 +52,6 @@ optional unless marked with `REQUIRED`.
 | client_name                  | String      | Yes      | Default: none<br>Name of the ordering client |
 | client_npi                   | String      | Yes      | Default: none<br>10-digit NPI number of the ordering customer  |
 | data                         | Object      |          | Default: none<br>A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
-| demog_id                     | Number      |          | Default: none<br>ID of a linked [demographic](../../demographics/README.md) record. Use only for "shell" cases |
 | diagnosis_comments           | String      |          | Default: none<br>Any additional comments |
 | diagnosis_history            | String      |          | Default: none<br>Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op            | String      |          | Default: none<br>Physician supplied diagnosis information created after the procedure.|
