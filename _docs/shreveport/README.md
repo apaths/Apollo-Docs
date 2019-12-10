@@ -13,30 +13,30 @@
 ## Overview
 
 Shreveport (GIS) cases arrive in two parts. First, an electronic
-requisition arrives from the Gastroenterologist via Provation. Separately,
-and typically (but not necessarily) patient demographics arrive via
+requisition arrives from the Gastroenterologist via Provation. Typically
+(but not necessarily) later patient demographics arrive via
 eClinicalWorks. The combination of these two components complete the
 information needed to create, process, and report a case in the Metaclinic
 LIS.
 
-Assembling a complete case follows of these steps:
+Assembling a complete case follows these steps:
 
 * Patients receive a procedure (Upper GI endoscopy, or Colonoscopy) or both
   procedures.
-  - When preforming the procedures GIS staff enter the lab request in Provation.
+  - When performing the procedures GIS staff enter the lab request in Provation.
   - Staff print the order and the Black Ice print driver makes a PDF that lands
-    in the `var/sftp/uploads/archive` folder. **One PDF is created for *each*
-    procedure. If the patient recieved both procedures (a "double"), two PDFs
+    in the `var/sftp/uploads` folder. **One PDF is created for *each*
+    procedure. If the patient received both procedures (a "double"), two PDFs
     are created, and differentiated in the `Procedure Type` field.**
 
-* Periodically the Apollo-BOT runs processes each PDF requisition. It...
+* Periodically the Apollo-BOT runs a job to process each PDF requisition. It...
   - Parses the PDF file into a useable JavaScript object.
-  - Creates a [Shell Order](../API/shellorders/README.md) object.
+  - Creates a ["Shell" Order](../shellorders/README.md) object with property `is_shell_order` set to `true`.
   - Optionally writes the JavaScript object to a JSON file object in the
     `server/data/shellorders/` folder for troubleshooting. Configuration
     property `shellOrders.saveJSON` toggles this feature.
 
-* A Lab user then reviews the [Shell Order](../API/shellorders/README.md) using
+* A Lab user then reviews the ["Shell" Order](../shellorders/README.md) using
   the [Apollo Client](https://github.com/apaths/apollo-client). When they are
   satisfied with the values they use the tool to insert the shell order into
   the Shreveport (GIS) instance of the Metaclinic LIS. **At this point the case
@@ -48,16 +48,20 @@ Assembling a complete case follows of these steps:
 
 * Periodically the Apollo-BOT runs a job that:
   - Pairs any unmatched [Demographic](../API/demographics/README.md) records
-    to any [Shell Order](../API/shellorder/README.md).
+    to any ["Shell" Order](../shellorders/README.md).
   - Pairs any unmatched [Demographic](../API/demographics/README.md) records
-    to any cases that have been ingested into the APS instance of the
+    to any cases that have been ingested into the Shreveport instance of the
     Metaclinic LIS. *Note: we use the MRN and the accessionNumber to make this
     match.*
+  - Pairs any unmatched [Demographic](../API/demographics/README.md) records
+    to any cases that have been ingested into the APS instance of the
+    Metaclinic LIS. *Note: we use the MRN and the accessionNumber to make this
+    match.*
 
-* An APS or Shrevport(GIS) accessioner then reviews the demographic
-  information receivedi the [Apollo Client](https://github.com/apaths/apollo-client).
-  When satisfied with the results, they can send the demographic infomraton to
-  the Shrevport LIS instance, and/or the APS LIS instance. When sending to the
+* An APS or Shreveport(GIS) accessioner then reviews the demographic
+  information received in the [Apollo Client](https://github.com/apaths/apollo-client).
+  When satisfied with the results, they can send the demographic information to
+  the Shreveport LIS instance, and/or the APS LIS instance. When sending to the
   APS LIS we warn the user that the operation destroys any changes to the
   fields made in LIS.
 

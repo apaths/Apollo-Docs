@@ -67,6 +67,7 @@ if all values are valid. These are the updatable fields
 | diagnosis_history          | String      | Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op          | String      | Physician supplied diagnosis information created after the procedure.|
 | diagnosis_pre_op           | String      | Physician supplied diagnosis information created prior to the procedure being performed   |
+| is_shell_order             | Boolean     | Indicates if this is a "shell" order. |
 | instructions               | String      | Physician instructions sent to the lab |
 | insurance_primary          | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
 | insurance_secondary        | Object      | An [insurance object](#insurance-object) for the secondary insurance payer  |

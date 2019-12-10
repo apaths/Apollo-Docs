@@ -42,6 +42,7 @@ parameter.
 | insurance_tertiary            | Object      | An [insurance object](./post/POST-demographics.md##insurance-object) for the primary insurance payer  |
 | location_name                 | String      | Name of the facility where the procedure was performed  |
 | location_npi                  | String      | 10-digit NPI number of the facility where the procedure was performed |
+| order_id                      | Number      | ID (foreign key) for the linked "shell" order.  |
 | patient                       | Object      | [patient object](./post/POST-demographics.md#patient-object) describing the patient |
 | procedure_date                | String      | An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | status                        | String      | A status can be "unmatched", "matchedToOrder" or "deleted"  |
