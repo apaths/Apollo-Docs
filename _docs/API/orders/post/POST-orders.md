@@ -63,6 +63,7 @@ optional unless marked with `REQUIRED`.
 | is_shell_order               | Boolean     |          | Default: false<bR>Indicates if the order is a "shell" order. |
 | location_name                | String      | Yes      | Default: none<br>Name of the facility where the procedure was performed  |
 | location_npi                 | String      | Yes      | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
+| lis_case_body                | Object      |          | Body as-sent to the Metaclinic API used to create the the case in LIS |
 | lis_case_id                  | Number      |          | Default: none<br>`caseID` for the Metaclinic LIS case created from this Order.  |
 | lis_case_number              | String      |          | Default: none<br>`caseNumber` for the Metaclinic LIS case created fro this Order.  |
 | patient                      | Object      | Yes      | Default: none<br>A [patient object](#patient-object) describing the patient |

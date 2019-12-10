@@ -47,6 +47,7 @@ parameter.
 | insurance_tertiary            | Object      | An [insurance object](./post/POST-orderes.md##insurance-object) for the primary insurance payer  |
 | imported_at                   | String      | Date order was imported into the resource  |
 | is_shell_order                | Boolean     | Indicates if the order is a "shell" order. "Shell" orders will not contain demographic information, except the minimal amount required to create an LIS case. |
+| lis_case_body                 | Object      | Body as-sent to the Metaclinic API used to create the the case in LIS |
 | lis_case_id                   | Number      | `caseID` of the Metaclinic LIS case created from this `Order`.  |
 | lis_case_number               | String      | `caseNumber` of the Metalclnic LIS case created fro this `Order`. |
 | location_name                 | String      | Name of the facility where the procedure was performed  |

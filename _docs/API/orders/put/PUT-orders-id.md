@@ -72,6 +72,7 @@ if all values are valid. These are the updatable fields
 | insurance_primary          | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
 | insurance_secondary        | Object      | An [insurance object](#insurance-object) for the secondary insurance payer  |
 | insurance_tertiary         | Object      | An [insurance object](#insurance-object) for the primary insurance payer  |
+| lis_case_body              | Object      | Body as-sent to the Metaclinic API used to create the the case in LIS |
 | lis_case_id                | Number      | `caseID` of the Metaclinic LIS case created from this `Order`.  |
 | lis_case_number            | String      | `caseNumber` of the Metalclnic LIS case created fro this `Order`. |
 | location_name              | String      | Name of the facility where the procedure was performed  |
