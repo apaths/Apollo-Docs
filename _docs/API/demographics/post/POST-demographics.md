@@ -44,6 +44,9 @@ optional unless marked with `REQUIRED`.
 
 | Parameter                    | Type        | Required | Description                        |
 |------------------------------|-------------| :------: |------------------------------------|
+| aps_case_body                | Object.     |          | The actual case body sent to the Metaclinic API that was used to create the Metaclinic case in the APS instance. |
+| aps_case_id                  | Number      |          | A number that identifies the Metaclinic case that demographics were pushed into APS instance. |
+| aps_case_number              | String      |          | The case number of the Metaclinic case that received the demographics in the APS instance. |
 | client_app                   | String      | Yes      | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_mrn                   | String      |          | Default: none<br>An ID the client HMR provides for the patien's Medical Record Number (mrn) |
 | client_name                  | String      | Yes      | Default: none<br>Name of the ordering client |
@@ -53,6 +56,9 @@ optional unless marked with `REQUIRED`.
 | insurance_primary            | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
 | insurance_secondary          | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the secondary insurance payer  |
 | insurance_tertiary           | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
+| lis_case_body                | Object.     |          | The actual case body sent to the Metaclinic API that was used to create the Metaclinic case. |
+| lis_case_id                  | Number      |          | A number that identifies the Metaclinic case that demographics were pushed into. |
+| lis_case_number              | String      |          | The case number of the Metaclinic case that received the demographcis |
 | location_name                | String      | Yes      | Default: none<br>Name of the facility where the procedure was performed  |
 | location_npi                 | String      | Yes      | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
 | order_id                     | Number      |          | Default: none<br>An ID (foreign-key) to a matched order object  |

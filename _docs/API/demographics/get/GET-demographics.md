@@ -42,11 +42,17 @@ optional unless marked with `REQUIRED`.
 
 | Parameter                  | Type        | Required | Description                        |
 |----------------------------|-------------| :------: |------------------------------------|
+| aps_case_body              | Object.     |          | The actual case body sent to the Metaclinic API that was used to create the Metaclinic case in the APS instance. |
+| aps_case_id                | Number      |          | A number that identifies the Metaclinic case that demographics were pushed into APS instance. |
+| aps_case_number            | String      |          | The case number of the Metaclinic case that received the demographics in the APS instance. |
 | client_app                 | String      |          | Default: none<br>A comma separated list of EMR names<br>ex: "gMed", "Practice Fusion"  |
 | client_name                | String      |          | Default: none<br>A comma separted list of client names. |
 | client_npi                 | String      |          | Default: none<br>10-digit NPI number of the ordering customer  |
 | client_mrn                 | String      |          | Default; none<br>Match the order's `client_mrn` value. You can submit more than one client_mrn separated by commas. |
 | fields                     | String      |          | Default: 'all'<br>- 'all' to return all available fields<br>- A comma separated list of [Order fields](../README.md#fields)
+| lis_case_body              | Object.     |          | The actual case body sent to the Metaclinic API that was used to create the Metaclinic case. |
+| lis_case_id                | Number      |          | A number that identifies the Metaclinic case that demographics were pushed into. |
+| lis_case_number            | String      |          | The case number of the Metaclinic case that received the demographcis |
 | location_name              | String      |          | Default: none<br>A comman separated list of facility names where the procedure was performed  |
 | location_npi               | String      |          | Default: none<br>A comma separated list of 10-digit NPI number of the facility where the procedure was performed |
 | limit                      | number      |          | Default: 100<br>A number between 0-1000. Limit results to this many `orders`  |
