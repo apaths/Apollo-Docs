@@ -45,7 +45,8 @@ optional unless marked with `REQUIRED`.
 | client_app                 | String      |          | Default: none<br>A comma separated list of EMR names<br>ex: "gMed", "Practice Fusion"  |
 | client_name                | String      |          | Default: none<br>A comma separted list of client names. |
 | client_npi                 | String      |          | Default: none<br>10-digit NPI number of the ordering customer  |
-| client_mrn                 | String      |          | Default; none<br>Match the order's `client_mrn` value. You can submit more than one client_mrn separated by commas. |
+| client_mrn                 | String      |          | Default: none<br>Match the order's `client_mrn` value. You can submit more than one client_mrn separated by commas. |
+| client_mrn_like            | String      |          | Default: none<br>Match the order's `client_mrn` by pattern. |
 | fields                     | String      |          | Default: 'all'<br>- 'all' to return all available fields<br>- A comma separated list of [Order fields](../README.md#fields)
 | is_shell_order             | Boolean     |          | Default: none <br>Indicates if the order is a "shell" order, and  should anticipate a demog_id or not |
 | lis_case_number            | String      |          | Defautl: none<br>The LIS case created from this order. |
