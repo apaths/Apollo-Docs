@@ -30,6 +30,9 @@ parameter.
 
 | Field                         | Type        | Description                        |
 |-------------------------------|-------------|------------------------------------|
+| aps_case_body                 | Object.     | The actual case body sent to the Metaclinic API that was used to create the Metaclinic case in the APS instance. |
+| aps_case_id                   | Number      | A number that identifies the Metaclinic case that demographics were pushed into APS instance. |
+| aps_case_number               | String      | The case number of the Metaclinic case that received the demographics in the APS instance. |
 | client_app                    | String      | Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_mrn                    | String      | An ID the client HMR provides for the patienst medical record number |
 | client_name                   | String      | Name of the ordering client |
@@ -40,6 +43,9 @@ parameter.
 | insurance_primary             | Object      | An [insurance object](./post/POST-demographics.md#insurance-object) for the primary insurance payer  |
 | insurance_secondary           | Object      | An [insurance object](./post/POST-demographics.md##insurance-object) for the secondary insurance payer  |
 | insurance_tertiary            | Object      | An [insurance object](./post/POST-demographics.md##insurance-object) for the primary insurance payer  |
+| lis_case_body                 | Object      | The actual case body sent to the Metaclinic API that was used to create the Metaclinic case. |
+| lis_case_id                   | Number      | A number that identifies the Metaclinic case that demographics were pushed into. |
+| lis_case_number               | String      | The case number of the Metaclinic case that received the demographcis |
 | location_name                 | String      | Name of the facility where the procedure was performed  |
 | location_npi                  | String      | 10-digit NPI number of the facility where the procedure was performed |
 | order_id                      | Number      | ID (foreign key) for the linked "shell" order.  |
