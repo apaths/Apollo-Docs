@@ -57,6 +57,7 @@ if all values are valid. These are the updatable fields
 
 | Parameter                  | Type        | Description                        |
 |----------------------------|-------------|------------------------------------|
+| archived                   | Boolean     | Indicates if the order has been archived |
 | client_app                 | String      | Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_req_id              | String      | An ID the submitting (HMR, typically) client uses to track the order. |
 | client_mrn                 | String      | An ID the client HMR provides for the patienst medical record number |

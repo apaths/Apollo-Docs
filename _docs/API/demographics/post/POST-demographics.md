@@ -47,6 +47,7 @@ optional unless marked with `REQUIRED`.
 | aps_case_body                | Object.     |          | The actual case body sent to the Metaclinic API that was used to create the Metaclinic case in the APS instance. |
 | aps_case_id                  | Number      |          | A number that identifies the Metaclinic case that demographics were pushed into APS instance. |
 | aps_case_number              | String      |          | The case number of the Metaclinic case that received the demographics in the APS instance. |
+| archived                     | Boolean     |          | Indicates if the demographic record has been archived. |
 | client_app                   | String      | Yes      | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_mrn                   | String      |          | Default: none<br>An ID the client HMR provides for the patien's Medical Record Number (mrn) |
 | client_name                  | String      | Yes      | Default: none<br>Name of the ordering client |
