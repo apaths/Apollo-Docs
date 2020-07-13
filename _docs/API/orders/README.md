@@ -31,7 +31,7 @@ parameter.
 |-------------------------------|-------------|------------------------------------|
 | client_app                    | String      | Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_record_id              | String      | An ID the client HMR uses to track the order. |
-| client_medical_record_number  | String      | An ID the client HMR provides for the patienst medical record number |
+| client_mrn                    | String      | An ID the client HMR provides for the patienst medical record number |
 | client_name                   | String      | Name of the ordering client |
 | client_npi                    | String      | 10-digit NPI number of the ordering customer  |
 | created_at                    | String      | Date the order was created on the service |

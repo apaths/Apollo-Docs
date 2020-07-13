@@ -45,8 +45,11 @@ optional unless marked with `REQUIRED`.
 | client_app                 | String      |          | Default: none<br>A comma separated list of EMR names<br>ex: "gMed", "Practice Fusion"  |
 | client_name                | String      |          | Default: none<br>A comma separted list of client names. |
 | client_npi                 | String      |          | Default: none<br>10-digit NPI number of the ordering customer  |
-| client_mrn                 | String      |          | Default; none<br>Match the order's `client_mrn` value. You can submit more than one client_mrn separated by commas. |
+| client_mrn                 | String      |          | Default: none<br>Match the order's `client_mrn` value. You can submit more than one client_mrn separated by commas. |
+| client_mrn_like            | String      |          | Default: none<br>Match the order's `client_mrn` by pattern. |
 | fields                     | String      |          | Default: 'all'<br>- 'all' to return all available fields<br>- A comma separated list of [Order fields](../README.md#fields)
+| imported_from              | String      |          | Default: none<br>An ISO8601 date/time stamp. Orders with `importDate` greater than or equal to this value.
+| imported_thru              | String      |          | Default: none<br>An ISO8601 date/time stamp. Returns orders with `importDate` less than, or equal to this value.
 | is_shell_order             | Boolean     |          | Default: none <br>Indicates if the order is a "shell" order, and  should anticipate a demog_id or not |
 | lis_case_number            | String      |          | Defautl: none<br>The LIS case created from this order. |
 | location_name              | String      |          | Default: none<br>A comman separated list of facility names where the procedure was performed  |
@@ -58,8 +61,6 @@ optional unless marked with `REQUIRED`.
 | procedure_date_thru        | String      |          | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | skip                       | number      |          | Default: 0<br>A positive integer. Skips the result to the n-th supplied number |
 | status                     | String      |          | Default: "All"<br>A comma separated list of [Order Status](../README.md#fields)
-| imported_from              | String      |          | Default: none<br>An ISO8601 date/time stamp. Orders with `importDate` greater than or equal to this value.
-| imported_thru              | String      |          | Default: none<br>An ISO8601 date/time stamp. Returns orders with `importDate` less than, or equal to this value.
 
 ### Example request
 
