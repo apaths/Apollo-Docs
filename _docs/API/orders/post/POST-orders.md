@@ -46,6 +46,7 @@ optional unless marked with `REQUIRED`.
 
 | Parameter                    | Type        | Required | Description                        |
 |------------------------------|-------------| :------: |------------------------------------|
+| archived                     | Boolean     |          | Default: false<br>Indicates if the case has been archived |
 | client_app                   | String      | Yes      | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_req_id                | String      |          | Default: none<br>An ID the client HMR uses to track the order. |
 | client_mrn                   | String      |          | Default: none<br>An ID the client HMR provides for the patien's Medical Record Number (mrn) |

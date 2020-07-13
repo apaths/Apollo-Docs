@@ -33,6 +33,7 @@ parameter.
 | aps_case_body                 | Object.     | The actual case body sent to the Metaclinic API that was used to create the Metaclinic case in the APS instance. |
 | aps_case_id                   | Number      | A number that identifies the Metaclinic case that demographics were pushed into APS instance. |
 | aps_case_number               | String      | The case number of the Metaclinic case that received the demographics in the APS instance. |
+| archived                      | Boolean     | Indicates if a demographic record has been archived. |
 | client_app                    | String      | Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_mrn                    | String      | An ID the client HMR provides for the patienst medical record number |
 | client_name                   | String      | Name of the ordering client |

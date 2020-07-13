@@ -42,6 +42,7 @@ optional unless marked with `REQUIRED`.
 
 | Parameter                  | Type        | Required | Description                        |
 |----------------------------|-------------| :------: |------------------------------------|
+| archived                   | Boolean     |          | Default: none<br>Return only orders that are (true) or not (false) archived. If nothing passed, returns all cases |
 | client_app                 | String      |          | Default: none<br>A comma separated list of EMR names<br>ex: "gMed", "Practice Fusion"  |
 | client_name                | String      |          | Default: none<br>A comma separted list of client names. |
 | client_npi                 | String      |          | Default: none<br>10-digit NPI number of the ordering customer  |
