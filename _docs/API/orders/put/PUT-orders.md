@@ -50,7 +50,7 @@ if all values are valid. These are the prameters and updatable fields:
 | id                         | Array       | A list of IDs of the object(s) you wish to update. Each `id` must be a valid numeric value. |
 | archived                   | Boolean     | Updates the archived field of the the objects in `id` list to the indicated value. |
 | deleted                    | Boolean     | Updates the `deleted` field of the objects in `id` list to the indicated value. |
-| status                     | String      | One of: converted|deleted|pending |
+| status                     | String      | One of: converted|pending |
 
 > NOTE: the set of updateable fields is very small. This prevents bulk errors from
   for impacting sensitive areas of the the `orders` field. These status fields are

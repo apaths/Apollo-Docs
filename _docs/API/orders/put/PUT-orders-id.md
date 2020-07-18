@@ -64,6 +64,7 @@ if all values are valid. These are the updatable fields
 | client_name                | String      | Default: none<br>Name of the ordering client |
 | client_npi                 | String      | Default: none<br>10-digit NPI number of the ordering customer  |
 | data                       | Object      | A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
+| deleted                    | Object      | Indicates if the order has been deleted by a user. |
 | diagnosis_comments         | String      | Any additional comments |
 | diagnosis_history          | String      | Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op          | String      | Physician supplied diagnosis information created after the procedure.|

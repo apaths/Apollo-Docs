@@ -46,13 +46,14 @@ optional unless marked with `REQUIRED`.
 
 | Parameter                    | Type        | Required | Description                        |
 |------------------------------|-------------| :------: |------------------------------------|
-| archived                     | Boolean     |          | Default: false<br>Indicates if the case has been archived |
+| archived                     | Boolean     |          | Default: `false`<br>Indicates if the case has been archived |
 | client_app                   | String      | Yes      | Default: none<br>Name of the HMR or client appliation generating the order<br>ex: "gMed", "Practice Fusion"  |
 | client_req_id                | String      |          | Default: none<br>An ID the client HMR uses to track the order. |
 | client_mrn                   | String      |          | Default: none<br>An ID the client HMR provides for the patien's Medical Record Number (mrn) |
 | client_name                  | String      | Yes      | Default: none<br>Name of the ordering client |
 | client_npi                   | String      | Yes      | Default: none<br>10-digit NPI number of the ordering customer  |
 | data                         | Object      |          | Default: none<br>A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
+| deleted                      | Object      |          | Default: `false`<br>Indicates if the case has been deleted. |
 | diagnosis_comments           | String      |          | Default: none<br>Any additional comments |
 | diagnosis_history            | String      |          | Default: none<br>Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op            | String      |          | Default: none<br>Physician supplied diagnosis information created after the procedure.|
@@ -61,10 +62,10 @@ optional unless marked with `REQUIRED`.
 | insurance_primary            | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
 | insurance_secondary          | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the secondary insurance payer  |
 | insurance_tertiary           | Object      |          | Default: none<br>An [insurance object](#insurance-object) for the primary insurance payer  |
-| is_shell_order               | Boolean     |          | Default: false<bR>Indicates if the order is a "shell" order. |
+| is_shell_order               | Boolean     |          | Default: `false`<bR>Indicates if the order is a "shell" order. |
 | location_name                | String      | Yes      | Default: none<br>Name of the facility where the procedure was performed  |
 | location_npi                 | String      | Yes      | Default: none<br>10-digit NPI number of the facility where the procedure was performed |
-| lis_case_body                | Object      |          | Body as-sent to the Metaclinic API used to create the the case in LIS |
+| lis_case_body                | Object      |          | Default: none<br>ody as-sent to the Metaclinic API used to create the the case in LIS |
 | lis_case_id                  | Number      |          | Default: none<br>`caseID` for the Metaclinic LIS case created from this Order.  |
 | lis_case_number              | String      |          | Default: none<br>`caseNumber` for the Metaclinic LIS case created fro this Order.  |
 | patient                      | Object      | Yes      | Default: none<br>A [patient object](#patient-object) describing the patient |
@@ -72,9 +73,9 @@ optional unless marked with `REQUIRED`.
 | physician_secondary          | Object      |          | Default: none<br>A [physician object](#physician-object) for the secondary (referring) physician  |
 | procedure_date               | String      | Yes      | Default: none<br>An ISO8601 date/time stamp. If no time is provided it will be recorded as midnight of the supplied day in the US-CT timezone  |
 | procedure_type               | String      |          | Default: none<br>Type of procedure. Typcally ("EGD", "Colon", "Double").  |
-| screening                    | Boolean     |          | Default: false<br>Indicates screeing procedure or not.  |
+| screening                    | Boolean     |          | Default: `false`<br>Indicates screeing procedure or not.  |
 | specimens                    | Array       | Yes (1+) | Default: none<br>An array of [specimen objects] submitted for pathology  |
-| stat                         | Boolean     |          | Default: false<br>Indicates stat testing required  |
+| stat                         | Boolean     |          | Default: `false`<br>Indicates stat testing required  |
 
 ### Insurance object
 
