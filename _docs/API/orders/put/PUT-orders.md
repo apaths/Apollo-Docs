@@ -47,7 +47,7 @@ if all values are valid. These are the prameters and updatable fields:
 
 | Parameter                  | Type        | Description                        |
 |----------------------------|-------------|------------------------------------|
-| id                         | Array       | A list of IDs of the object(s) you wish to update. Each `id` must be a valid numeric value. |
+| id                         | Array       | An array of IDs of the object(s) you wish to update. Each `id` must be a valid numeric value. You must send at least one id, but not more than 3000 |
 | archived                   | Boolean     | Updates the archived field of the the objects in `id` list to the indicated value. |
 | deleted                    | Boolean     | Updates the `deleted` field of the objects in `id` list to the indicated value. |
 | status                     | String      | One of: converted|pending |
