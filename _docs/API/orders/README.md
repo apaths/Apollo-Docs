@@ -75,6 +75,7 @@ parameter.
 - [GET/ orders/{id}/{field}](./get/GET-orders-id-field.md)
 
 ### Update an order
+- [PUT/ orders/](./put/PUT-orders.md) (limited fields available)
 - [PUT/ orders/{id}](./put/PUT-orders-id.md)
 
 ### Delete an order
