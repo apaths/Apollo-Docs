@@ -37,6 +37,7 @@ parameter.
 | client_npi                    | String      | 10-digit NPI number of the ordering customer  |
 | created_at                    | String      | Date the order was created on the service |
 | data                          | Object      | A structured JSON object for any optional data the interface needs to provide to the case object. Use this for any information that doesnt fit into the standard fields. |
+| deleted                       | Boolean     | Indicates if the order has been "deleted". Orders flagged as deleted are not removed from the database until needed (manually). They will not show up in queries unless specifically requested. |
 | diagnosis_comments            | String      | Any additional comments |
 | diagnosis_history             | String      | Physician supplied diagnosis history. Used to provide background to reading pathologist. |
 | diagnosis_post_op             | String      | Physician supplied diagnosis information created after the procedure.|
@@ -61,7 +62,7 @@ parameter.
 | screening                     | Boolean     | Indicates procedure is screening or not  |
 | specimens                     | Array       | An array of [specimen objects](./post/POST-orders.md#specimen-object) submitted for pathology  |
 | stat                          | Boolean     | Indicates if order requires stat testing   |
-| status                        | String      | Indicates status. One of `pending`, `converted`, `deleted`  |
+| status                        | String      | Indicates status. One of `pending`, `converted` |
 | updated_at                    | String      | Date the order was last updated on the service |
 
 ## API Reference
